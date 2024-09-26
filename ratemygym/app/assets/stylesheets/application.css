@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+/* Placeholder CSS file */
+body {
+  font-family: Arial, sans-serif;
+}
