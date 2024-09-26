@@ -1,0 +1,67 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  /* Container for the buttons */
+  .button-container {
+    /* Aligns the buttons horizontally */
+    display: flex;   
+    /* Provides a space between the buttons */           
+    gap: 40px;       
+    /* places the button the right */           
+    justify-content: right;   
+     
+}
+
+button {
+    /* Large button font size */
+    font-size: 30px;     
+    /*  padding for button size */
+    padding: 10px 20px; 
+    /* makes button round */
+    border-radius: 15px;     
+       
+}
+
+  header h1 {
+    text-align: center;
+    font-size: 145px;
+    margin: 100px 0;
+    font-family: sans-serif;
+    color: black;
+  }
+  
+  /* Image container layout */
+  .gym-images {
+    display: flex;
+    justify-content: center;
+    /* Wraps images to a new line so it doesnt go out */
+    flex-wrap: wrap;
+     /* Adds space between images */
+    gap: 30px; 
+    padding: 20px;
+  }
+  
+  /* Style the images */
+  .gym-images a img {
+    /* Size of the images */
+    width: 680px;
+    height: 400px;
+    /* places the image scaled up to size*/
+    object-fit: cover;
+    border: 2px solid black;
+    transition: transform 0.4s, border-color 0.3s;
+  }
+  
+  /* Hover effect for images */
+  .gym-images a img:hover {
+    transform: scale(1.10);
+    border-color: rgb(26, 163, 213);
+    /* Changes border color on hover */
+    border-width: 5px; 
+  }
+  
