@@ -3011,3 +3011,280 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-09-26 23:11:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:11:37 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 23:11:44 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 296ms (ActiveRecord: 21.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 23:11:44 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:11:44 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 23:12:12 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (12.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:21
+  Rendered gyms/show.html.erb within layouts/application (Duration: 29.5ms | GC: 13.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | GC: 13.5ms)
+Completed 200 OK in 76ms (Views: 28.8ms | ActiveRecord: 24.9ms (4 queries, 1 cached) | GC: 13.5ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:12:12 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:12:12 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for 127.0.0.1 at 2024-09-26 23:12:34 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:12:34 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:12:34 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/3" for 127.0.0.1 at 2024-09-26 23:12:53 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGym Load (2.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 3]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 5.9ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:12:53 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:12:53 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/4" for 127.0.0.1 at 2024-09-26 23:12:55 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 4]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:12:55 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:12:55 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/3" for 127.0.0.1 at 2024-09-26 23:12:58 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 3]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:12:58 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:12:58 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/5" for 127.0.0.1 at 2024-09-26 23:13:02 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 5]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.4ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:13:02 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:13:02 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/5" for 127.0.0.1 at 2024-09-26 23:13:05 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 5]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 23:13:06 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 23:13:06 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
