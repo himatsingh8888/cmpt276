@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :gym
+  belongs_to :user
 
   validates :comment, presence: true
   validates :rating, presence: true, inclusion: { in: 1..5 }
