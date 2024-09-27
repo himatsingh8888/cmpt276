@@ -18,6 +18,11 @@
     <!-- Display each review for the gym -->
     <% @reviews.each do |review| %>
       <div class="review">
+<<<<<<< HEAD
+=======
+        <strong>Reviewed by:</strong> <%= review.user.username %> <!-- Display the user's username -->
+        <br>
+>>>>>>> reviews
         <strong>Rating:</strong> <%= review.rating %> / 5
         <p><%= review.comment %></p>
         <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
