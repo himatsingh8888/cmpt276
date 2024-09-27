@@ -5,49 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RateMyGym</title>
 
-  <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
-  
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= stylesheet_link_tag 'custom', media: 'all', 'data-turbo-track': 'reload' %>
 </head>
 <body>
-
 
   <header>
     <h1>Rate My Gym</h1> 
   </header>
-   
 
   <main>
     
-    <!-- Clickable immages to access gyms -->
+    <!-- Clickable images to access gyms -->
     <div class="gym-images">
+      
+      <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
 
-      <a href="gym1.html">
-        <img src="https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg" alt="Gym 1">
-      </a>
+      <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
 
-      <a href="gym2.html">
-        <img src="https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg" alt="Gym 2">
-      </a>
+      <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
 
-      <a href="gym3.html">
-        <img src="https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png" alt="Gym 3">
-      </a>
+      <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
 
-      <a href="gym4.html">
-        <img src="https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png" alt="Gym 4">
-      </a>
+      <%= link_to image_tag("data:image/png;base64,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", alt: "Gym 5"), gym_path(5) %>
 
-      <a href="gym5.html">
-        <img src="data:image/png;base64,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" alt="Gym 5">
-      </a>
-
-      <a href="gym6.html">
-        <img src="https://logos-world.net/wp-content/uploads/2021/11/YMCA-Logo.png" alt="Gym 6">
-      </a>
-
-    </div>
-  </main>
-
-  
-</body>
-</html>
+ </div>

@@ -1641,3 +1641,1071 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-09-25 21:34:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-25 21:34:09 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-25 21:34:18 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 295ms (ActiveRecord: 22.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-25 21:34:19 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-25 21:34:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-25 21:34:20 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/gym1.html" for 127.0.0.1 at 2024-09-25 21:34:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/gym1.html"):
+  
+Started GET "/" for 127.0.0.1 at 2024-09-26 14:22:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:22:54 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 14:23:06 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 295ms (ActiveRecord: 23.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 14:23:06 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-26 14:23:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:23:06 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/gym1.html" for 127.0.0.1 at 2024-09-26 14:23:10 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/gym1.html"):
+  
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-26 14:29:00 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:29:00 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:29:00 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 14:29:02 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-26 14:29:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:29:02 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/gym2.html" for 127.0.0.1 at 2024-09-26 14:29:05 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/gym2.html"):
+  
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(270337806521190555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateGyms (20240926215018)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.8ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240926215018') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20240926215019)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240926215019') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(270337806521190555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-09-26 14:56:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:56:54 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 14:57:04 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 311ms (ActiveRecord: 33.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 14:57:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-26 14:57:04 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 14:57:04 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/gym1.html" for 127.0.0.1 at 2024-09-26 14:57:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/gym1.html"):
+  
+Started GET "/home/gym2.html" for 127.0.0.1 at 2024-09-26 14:57:16 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/gym2.html"):
+  
+Started GET "/" for 127.0.0.1 at 2024-09-26 15:08:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 15:08:03 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 15:08:10 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 293ms (ActiveRecord: 16.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 15:08:10 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-26 15:08:10 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 15:08:10 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/gym1.html" for 127.0.0.1 at 2024-09-26 15:08:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/gym1.html"):
+  
+Started GET "/home/test.css" for 127.0.0.1 at 2024-09-26 15:43:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/home/test.css"):
+  
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 15:43:50 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 15:43:52 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateMyGym</title>
+
+  <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
+  
+</head>
+<body>
+
+  <header>
+    <h1>Rate My Gym</h1> 
+  </header>
+
+  <main>
+    
+    <!-- Clickable images to access gyms -->
+    <div class="gym-images">
+      
+      <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
+
+      <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
+
+      <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
+
+      <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
+
+      <%= link_to image_tag("data:image/png;base64,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" alt: "Gym 5"), gym_path(5) %>
+
+    </div>
+  </main>
+
+</body>
+</html>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/damin/cmpt276-1/ratemygym/app/views/home/index.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+...lQtL6bprL8dLUO69FMA0V1iT/9" alt: "Gym 5"), gym_path(5) ); @o...
+...                            ^~~
+/Users/damin/cmpt276-1/ratemygym/app/views/home/index.html.erb:30: syntax error, unexpected ')', expecting `end' or dummy end
+...9" alt: "Gym 5"), gym_path(5) ); @output_buffer.safe_append='
+...                              ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>RateMyGym</title>
+7:    
+8:      <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
+9:      
+10:    </head>
+11:    <body>
+12:    
+13:      <header>
+14:        <h1>Rate My Gym</h1> 
+15:      </header>
+16:    
+17:      <main>
+18:        
+19:        <!-- Clickable images to access gyms -->
+20:        <div class="gym-images">
+21:          
+22:          <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
+23:    
+24:          <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
+25:    
+26:          <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
+27:    
+28:          <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
+29:    
+30:          <%= link_to image_tag("data:image/png;base64,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" alt: "Gym 5"), gym_path(5) %>
+31:    
+32:        </div>
+33:      </main>
+34:    
+35:    </body>
+36:    </html>
+  
+app/views/home/index.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/index.html.erb:30: syntax error, unexpected ')', expecting `end' or dummy end
+Started GET "/" for 127.0.0.1 at 2024-09-26 15:44:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 15:44:09 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 15:44:16 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 298ms (Views: 1.0ms | ActiveRecord: 29.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 15:44:17 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 15:44:20 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 252ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 15:44:21 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateMyGym</title>
+
+  <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
+  
+</head>
+<body>
+
+  <header>
+    <h1>Rate My Gym</h1> 
+  </header>
+
+  <main>
+    
+    <!-- Clickable images to access gyms -->
+    <div class="gym-images">
+      
+      <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
+
+      <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
+
+      <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
+
+      <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
+
+      <%= link_to image_tag("data:image/png;base64,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" alt: "Gym 5"), gym_path(5) %>
+
+    </div>
+  </main>
+
+</body>
+</html>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/damin/cmpt276-1/ratemygym/app/views/home/index.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+...lQtL6bprL8dLUO69FMA0V1iT/9" alt: "Gym 5"), gym_path(5) ); @o...
+...                            ^~~
+/Users/damin/cmpt276-1/ratemygym/app/views/home/index.html.erb:30: syntax error, unexpected ')', expecting `end' or dummy end
+...9" alt: "Gym 5"), gym_path(5) ); @output_buffer.safe_append='
+...                              ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>RateMyGym</title>
+7:    
+8:      <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
+9:      
+10:    </head>
+11:    <body>
+12:    
+13:      <header>
+14:        <h1>Rate My Gym</h1> 
+15:      </header>
+16:    
+17:      <main>
+18:        
+19:        <!-- Clickable images to access gyms -->
+20:        <div class="gym-images">
+21:          
+22:          <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
+23:    
+24:          <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
+25:    
+26:          <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
+27:    
+28:          <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
+29:    
+30:          <%= link_to image_tag("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADOCAMAAADR0rQ5AAAA8FBMVEX///+TlZj3jx4AAAD19fX3jBGPkZT2hwD7+/uMjpH+9u73kyvp6en5rW///fr4rGnX2NmJlaDikD/4nUn7zaScnaD83MT70q2xAAD4r3SsAAC6u73IyMp0cnLv0NJsa2v4ol9NS0s2MzSAf3+op6fIYGfisLPw2du3ECL6x5zNcnjT09P2hQDu7u7h4eKysbHUkJREQUJbWVkSCw395dH3lzkmIyTOeH3YnqDnvsDDwsIqJyi1ABlxb3D14+T6voz979+Unqbemme4LzfBT1bqxce4Hy3WjZK8O0NgXl8bFxi6JzTBSlI8OTrRgIXZnJ8gQnN4AAAK2UlEQVR4nO2cC3eTSBuAwSGU0ejihd1IaGpbmtZSwDZa07TNup+9Zq3+/3/zMQNzgyEhzaXHPe9zjpoww+WZ+wwTDQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYDMeSiS0pKPtWQgQ1wpkr+nOVVToHns3B2AtiKawdeBjbEphpt5XDdWCXXcmbHdl+/WajJdj48io/99W7l38szEdV2sMmw8bddiVV2im2TRFFWJsNkKwbxH79pvVM0HqbW3/+ctRamI2XilRXPD1OY0NHO5QSZrXWz6rWnzfkpHgsrfdKVgsf0zXqcE2W3Wu3fv5sGdJla6aDQ8uox2LZvXbrvzeWIV2T17g7xZlQ1IS1W79YirTeeqa0YQT4Kay/LaV8660bSBvGCD+B9Z/LKeA6aztsIJ0X8v+QtVlqyKwkCkaBW+m7vf+SNVa7LNezyXgMY2yWBi0RfmrrJY1SMms7lQ8kpqRj41AauLSfvIS/eP/ykagjUmItj8i6JRkbByzIevLWrPXWWA6O2n6nVRccStKLWmf1xvQ8E8tD+6exlrJaI509qecYvGNXrb0CJb4nHVWtMR4VDUUywppbrc9a7rVG+vyzzUzbsyvWNi8lgZR1mLeAdslaVBZ6TvVm67OWGvCkrtDanhHa1byusU701tgr9Y/yHHfd1iZf7TBqnImrrZtzzWVtKj1FTrlCrc9aFPCoSfv0WGtLO+Ytaa/N2or4xyZ9y6OtawiVtnx9ec3bntpavUpr62ny2uDVOtV2oSu2Nlw5rWeOzb789e4RfJ5y/0YFfOnWSmLPHodvPIajt9/q7h43yuoFrZ2oG4ZpIHdh8hhvVXOu1tGfNdbNqvVi1oGdzeXIqHQkHZQatNXNNDdqcttdvbXop7A0IJRuvDrr1ge9tWaAuGRreTonjYOlZnyFqwpH+tdHK7dWB0HSmFwU8RVab7x7EmundCH+wky68ypXkP7WWjcajy5gXb6+aNGStVgr62acVbdmYbln9FhIvI4SXmO94p7Lql4prgSt3zpuJD2XNZas40qi8nhiSW391isYkcrW1WU2UfgbW2dHnjfm1ceNemvelHbnn33whYLZ1tUKhPkcN2xurc8wPVOsHf6Mj5hp/rbWlhgtzL+qwK3lbmmlJXxJ1ousIJmh7lS+RuoorVml/jyiNVuedaPVQuxpd2jorXmPJFtX333wKzXvuZZn3WRlGKfalWEx0Eh01rFsXV2q4Se3G49SlmctvwUov+RiHiSKLq95ObHk6RSLkSjW5bGfmH40H5EusYTLL/dCnXY+GbY0+1Iwrx3SeTwPXcW63FhiHjB6grye/XavCI+rb/fEvEmUX6wMXSRrNbOxbkV6jdZChD5q6W2jLR4vqrzJFU6iY1JTom5VAYs3IVLr3mCNdA7+aE21Vl5LxKHkbSu70Cr7UuyRElbKQ/p19gqSNLFf7hqpsntJs0MjkY8Y7a6Jc8yuusUyrLzJlZOE7uoQ0rQhUFcLI5ukaBZLfrkp1fc178ZxDJU4cV03qewqrVhjqSTEQbcbSd+DqjVZGfa8NJJvJ1f39VpjzftGDaTPVq3tUX1sr1LCdSijl7WtIBW77KY8vZDW7Euxy6WEk+fhTGtlo4DG+vMKrUvbCOqly9b1yVVcd4a1OhzU7SNdjvSzo78Ua7uZthPqd8/i6jZ6StGmz7AuLeDorF8uZyNpaT2c1avpW0nbnm4crm0JKayNEutmulQtL6bprL8dLUO69FMA0V1iT/9" alt: "Gym 5"), gym_path(5) %>
+31:    
+32:        </div>
+33:      </main>
+34:    
+35:    </body>
+36:    </html>
+  
+app/views/home/index.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/index.html.erb:30: syntax error, unexpected ')', expecting `end' or dummy end
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 15:55:36 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.4ms | GC: 3.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 3.0ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateMyGym</title>
+
+  <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
+  
+</head>
+<body>
+
+  <header>
+    <h1>Rate My Gym</h1> 
+  </header>
+
+  <main>
+    
+    <!-- Clickable images to access gyms -->
+    <div class="gym-images">
+      
+      <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
+
+      <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
+
+      <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
+
+      <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
+
+      <%= link_to image_tag("data:image/png;base64,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" alt: "Gym 5"), gym_path(5) %>
+
+    </div>
+  </main>
+
+</body>
+</html>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/damin/cmpt276-1/ratemygym/app/views/home/index.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+...lQtL6bprL8dLUO69FMA0V1iT/9" alt: "Gym 5"), gym_path(5) ); @o...
+...                            ^~~
+/Users/damin/cmpt276-1/ratemygym/app/views/home/index.html.erb:30: syntax error, unexpected ')', expecting `end' or dummy end
+...9" alt: "Gym 5"), gym_path(5) ); @output_buffer.safe_append='
+...                              ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>RateMyGym</title>
+7:    
+8:      <link rel="stylesheet" href="test.css"> <!-- Link to CSS file -->
+9:      
+10:    </head>
+11:    <body>
+12:    
+13:      <header>
+14:        <h1>Rate My Gym</h1> 
+15:      </header>
+16:    
+17:      <main>
+18:        
+19:        <!-- Clickable images to access gyms -->
+20:        <div class="gym-images">
+21:          
+22:          <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "Gym 1"), gym_path(1) %>
+23:    
+24:          <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Gym 2"), gym_path(2) %>
+25:    
+26:          <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Gym 3"), gym_path(3) %>
+27:    
+28:          <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "Gym 4"), gym_path(4) %>
+29:    
+30:          <%= link_to image_tag("data:image/png;base64,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" alt: "Gym 5"), gym_path(5) %>
+31:    
+32:        </div>
+33:      </main>
+34:    
+35:    </body>
+36:    </html>
+  
+app/views/home/index.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/index.html.erb:30: syntax error, unexpected ')', expecting `end' or dummy end
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 16:21:58 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.8ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 16:21:58 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 16:22:00 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (2.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 225ms (ActiveRecord: 43.9ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=1):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(270337806521190555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddDescriptionToGyms (20240926233311)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mALTER TABLE "gyms" ADD "description" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240926233311') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(270337806521190555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.9ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gym 1"], ["location", "123 Gym St, Vancouver, BC"], ["created_at", "2024-09-26 23:33:30.845357"], ["updated_at", "2024-09-26 23:33:30.845357"], ["description", "A great gym to workout with a wide range of equipment and excellent trainers."]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.6ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Anytime Fitness"], ["location", "456 Fitness Ave, Burnaby, BC"], ["created_at", "2024-09-26 23:33:30.849970"], ["updated_at", "2024-09-26 23:33:30.849970"], ["description", "Perfect for strength training with 24/7 access and modern facilities."]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.7ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Planet Fitness"], ["location", "789 Wellness Blvd, Richmond, BC"], ["created_at", "2024-09-26 23:33:30.851579"], ["updated_at", "2024-09-26 23:33:30.851579"], ["description", "Known for cardio workouts, this gym offers plenty of treadmills and group classes."]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (0.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gold's Gym"], ["location", "1011 BodyFit Dr, Surrey, BC"], ["created_at", "2024-09-26 23:33:30.860166"], ["updated_at", "2024-09-26 23:33:30.860166"], ["description", "State of the art equipment with an emphasis on bodybuilding and strength training."]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (6.9ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "CrossFit Muscle"], ["location", "1213 Muscle St, North Vancouver, BC"], ["created_at", "2024-09-26 23:33:30.862356"], ["updated_at", "2024-09-26 23:33:30.862356"], ["description", "Top-notch gym for athletes looking to improve their performance with CrossFit training."]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (1.0ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "YMCA"], ["location", "1415 Fit Lane, Coquitlam, BC"], ["created_at", "2024-09-26 23:33:30.870602"], ["updated_at", "2024-09-26 23:33:30.870602"], ["description", "Great environment for all levels, offering family-friendly facilities and a swimming pool."]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-09-26 16:33:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 16:33:58 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-09-26 16:34:04 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damintest1", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damintest1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 283ms (ActiveRecord: 13.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 16:34:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 16:34:04 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 16:34:05 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."gym_id" = $1 LIMIT $2[0m  [["gym_id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:5
+  Rendered gyms/show.html.erb within layouts/application (Duration: 11.3ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.7ms)
+Completed 200 OK in 66ms (Views: 10.0ms | ActiveRecord: 11.3ms (2 queries, 0 cached) | GC: 16.4ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 16:34:05 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 16:34:30 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "gym_id"=>"1"}
+  [1m[36mGym Load (0.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'content' for Review.):
+
+Causes:
+NoMethodError (undefined method `content=' for an instance of Review)
+  
+app/controllers/reviews_controller.rb:4:in `create'
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 17:01:52 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "gym_id"=>"1"}
+  [1m[36mGym Load (1.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameter: :content. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x000000012ed58a20>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "controller"=>"reviews", "action"=>"create", "gym_id"=>"1"} }[0m
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 37.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+  
+NoMethodError (undefined method `content' for an instance of Review):
+  
+app/controllers/reviews_controller.rb:6:in `create'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:01:54 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 17:01:56 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "gym_id"=>"1"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameter: :content. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x000000014c897950>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "controller"=>"reviews", "action"=>"create", "gym_id"=>"1"} }[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method `content' for an instance of Review):
+  
+app/controllers/reviews_controller.rb:6:in `create'
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 17:06:14 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "gym_id"=>"1"}
+  [1m[36mGym Load (2.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+[31mUnpermitted parameter: :content. Context: { controller: ReviewsController, action: create, request: #<ActionDispatch::Request:0x000000014d4da1e0>, params: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "content"=>"This gym is very good!"}, "commit"=>"Submit Review", "controller"=>"reviews", "action"=>"create", "gym_id"=>"1"} }[0m
+Redirected to http://127.0.0.1:3000/gyms/1
+Completed 302 Found in 122ms (ActiveRecord: 102.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 17:06:14 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (1.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:06:14 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:14 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:06:21 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:21 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:21 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-09-26 17:06:23 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:23 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 17:06:24 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:06:25 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:25 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for 127.0.0.1 at 2024-09-26 17:06:27 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:06:27 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:27 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 17:06:29 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:06:29 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:06:29 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 17:06:43 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"comment"=>"This is a good gym!", "rating"=>"5"}, "commit"=>"Submit Review", "gym_id"=>"1"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:6:in `create'
+  [1m[36mReview Create (11.0ms)[0m  [1m[32mINSERT INTO "reviews" ("gym_id", "user_id", "rating", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["gym_id", 1], ["user_id", nil], ["rating", 5], ["comment", "This is a good gym!"], ["created_at", "2024-09-27 00:06:43.364271"], ["updated_at", "2024-09-27 00:06:43.364271"]]
+  ↳ app/controllers/reviews_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reviews_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 11.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "reviews" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, null, 5, This is a good gym!, 2024-09-27 00:06:43.364271, 2024-09-27 00:06:43.364271).
+):
+
+Causes:
+PG::NotNullViolation (ERROR:  null value in column "user_id" of relation "reviews" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, null, 5, This is a good gym!, 2024-09-27 00:06:43.364271, 2024-09-27 00:06:43.364271).
+)
+  
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:17:48 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (1.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 277ms (ActiveRecord: 28.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:17:49 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 17:17:51 -0700
+  
+SyntaxError (/Users/damin/cmpt276-1/ratemygym/app/controllers/reviews_controller.rb:1: syntax error, unexpected backslash
+\class ReviewsController < App...
+^
+):
+  
+app/controllers/reviews_controller.rb:1: syntax error, unexpected backslash
+Started POST "/gyms/1/reviews" for 127.0.0.1 at 2024-09-26 17:18:50 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"comment"=>"This is a good gym!", "rating"=>"5"}, "commit"=>"Submit Review", "gym_id"=>"1"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+  [1m[36mReview Create (8.2ms)[0m  [1m[32mINSERT INTO "reviews" ("gym_id", "user_id", "rating", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["gym_id", 1], ["user_id", 1], ["rating", 5], ["comment", "This is a good gym!"], ["created_at", "2024-09-27 00:18:50.467570"], ["updated_at", "2024-09-27 00:18:50.467570"]]
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:3000/gyms/1
+Completed 302 Found in 105ms (ActiveRecord: 90.3ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-09-26 17:18:50 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:19
+  Rendered gyms/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.2ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/gyms/custom.css" for 127.0.0.1 at 2024-09-26 17:18:50 -0700
+Processing by GymsController#show as CSS
+  Parameters: {"id"=>"custom"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gym with 'id'=custom):
+  
+app/controllers/gyms_controller.rb:3:in `show'
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-26 17:18:50 -0700
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
