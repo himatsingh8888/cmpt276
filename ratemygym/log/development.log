@@ -2791,3 +2791,38 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-09-26 20:59:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/damin/cmpt276-1/ratemygym/app/controllers/application_controller.rb:2: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/Users/damin/cmpt276-1/ratemygym/app/controllers/application_controller.rb:6: syntax error, unexpected ===
+=======
+^~~
+/Users/damin/cmpt276-1/ratemygym/app/controllers/application_controller.rb:11: syntax error, unexpected >>
+>>>>>>> 4db2e44 (dkdkd)
+^~
+):
+  
+app/controllers/application_controller.rb:2: syntax error, unexpected <<
+app/controllers/application_controller.rb:6: syntax error, unexpected ===
+app/controllers/application_controller.rb:11: syntax error, unexpected >>
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-09-26 20:59:37 -0700
+  
+SyntaxError (/Users/damin/cmpt276-1/ratemygym/app/controllers/application_controller.rb:2: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/Users/damin/cmpt276-1/ratemygym/app/controllers/application_controller.rb:6: syntax error, unexpected ===
+=======
+^~~
+/Users/damin/cmpt276-1/ratemygym/app/controllers/application_controller.rb:11: syntax error, unexpected >>
+>>>>>>> 4db2e44 (dkdkd)
+^~
+):
+  
+app/controllers/application_controller.rb:2: syntax error, unexpected <<
+app/controllers/application_controller.rb:6: syntax error, unexpected ===
+app/controllers/application_controller.rb:11: syntax error, unexpected >>
+app/controllers/sessions_controller.rb:1:in `<main>'
