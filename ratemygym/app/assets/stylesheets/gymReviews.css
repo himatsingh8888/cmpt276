@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+:root{
+    --yellow: #FFBD13;
+    --blue: #4383FF;
+    --blue-d-1: #3278FF;
+    --light: #F5F5F5;
+    --grey: #AAA;
+    --white: #FFF;
+    --shadow: 8px 8px 30px rgba(0,0,0,.05);
+}
+
+/* The background colours */
+/* This chnages the background of the website */
+body {
+    background-color: var(--light);
+    margin: 0; /* Remove the default margin */
+    padding: 0; /* Remove any default padding */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    
+}
+
+
+/* This is the white wrapper which you see behind the writing */
+/* This allows it to pop up a bit more */
+.wrapper {
+    background: var(--white);
+    padding: 3rem; /* Increase padding for a more spacious form */
+    max-width: 1100px; /* Increase max-width to make the form wider */
+    width: 100%;
+    box-shadow: var(--shadow);
+    margin-left: 20px;
+    min-height: 600px; /* Optionally set a minimum height if desired */
+
+ 
+}
+
+/* Text under the writing to add some space to the website */
+.text {
+    margin-bottom: 400px; /* Adds 20px space below the text */
+}
+
+/* This is for the large image represening the company logo */
+.full-width-image {
+    /* This makes the image take up 100% of the width of its container */
+    width: 100%; 
+    /* This maintains the aspect ratio of the image */
+    height: auto; 
+    /* Removes any extra space below the image */
+    display: block; 
+    /* Ensures the image covers the full width without distortion */
+    object-fit: cover; 
+   
+}
+
+
+
+/* * This is for the "leave the review sign" */ 
+/* The writing above the stars submisson */
+.wrapper h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1 rem;
+    align-items: center;
+}
+
+/* This is for the stars where people can use to rate things */
+.rating {
+    /* A;ways for images to change depedning on screen size */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    grid-gap: .5rem;
+    font-size: 2rem;
+    color: var(--yellow);
+    margin-top: 1rem; /* Space between text and stars */
+    margin-bottom: 2rem;
+
+}
+
+
+
+/* Add space under each review when they are posted onto the website */
+.review-item{
+    margin-bottom: 70px;
+}
+
+
+
+/* Animation of the star */
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+/* Star animation for machines */
+/* Allows for cursor to change when hovering */
+.rating .starMachines {
+    cursor: pointer;
+}
+/* Bring in and out the star */
+.rating .starMachines.active {
+    opacity: 1;
+    animation: animate .5s ease-in-out forwards;
+}
+/* When hovering gives animation */
+.rating .starMachines:hover {
+    transform: scale(1.2);
+}
+
+
+/* star animation for staff */
+.rating .starStaff {
+    cursor: pointer;
+}
+.rating .starStaff.active {
+    opacity: 1;
+    animation: animate .5s ease-in-out forwards;
+}
+
+.rating .starStaff:hover {
+    transform: scale(1.2);
+}
+
+/* stars for locaion */
+.rating .starLocation {
+    cursor: pointer;
+}
+.rating .starLocation.active {
+    opacity: 1;
+    animation: animate .5s ease-in-out forwards;
+}
+
+.rating .starLocation:hover {
+    transform: scale(1.2);
+}
+
+/* Stars for cleaniness */
+.rating .starClean {
+    cursor: pointer;
+}
+.rating .starClean.active {
+    opacity: 1;
+    animation: animate .5s ease-in-out forwards;
+}
+
+.rating .starClean:hover {
+    transform: scale(1.2);
+}
+
+/* Stars for atmosphere */
+.rating .starAsphere {
+    cursor: pointer;
+}
+.rating .starAsphere.active {
+    opacity: 1;
+    animation: animate .5s ease-in-out forwards;
+}
+
+.rating .starAsphere:hover {
+    transform: scale(1.2);
+}
+
+/* The text area css */
+/* This is wher the user writes the written review */
+textarea {
+    width: 100%;
+    background: var(--light);
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+/* Button things */
+.button-group{
+
+    display: flex;
+    grid-gap: .5rem;
+    align-items: center;
+
+}
+
+.button-group .btn{
+    padding: 1.2rem 2rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    /* Makes the cursor have a pointer */
+    cursor: pointer;
+    font-size: 1.2rem; 
+}
+
+/* Submit button */
+.button-group .btn-submit {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.button-group .btn-submit:hover {
+    background: var(--blue-d-1);
+}
+
+/* Cancel button */
+.button-group .btn-cancel {
+    background: var(--white);
+    color: var(--blue);
+}
+
+.button-group .btn-cancel:hover {
+    background: var(--light);
+}
