@@ -1,17 +1,109 @@
-<h2>Submit a Review</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="gymReview.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Review and Rating System</title>
+</head>
+<body>
+    
+     <!-- Original Review Form -->
+     <div class="wrapper">
+  <div class="container">
+    <!-- New Header section -->
+    <header>
+    <img src="https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg" alt="Description of the image" class="full-width-image">
 
-<%= form_with(model: [ @gym, @gym.reviews.new ], local: true) do |form| %>
-  <div>
-    <%= form.label :comment, "Write your review:" %>
-    <%= form.text_area :comment %>
-  </div>
+      <h1>Gym Reviews for Goodlife Fitness </h1>
+      <p class="text">Leave your reviews for different aspects of the gym below.</p>
+    </header>
 
-  <div>
-    <%= form.label :rating, "Rate the gym (1-5):" %>
-    <%= form.number_field :rating, in: 1..5 %>
-  </div>
 
-  <div>
-    <%= form.submit "Submit Review" %>
+   
+        
+      <h3 class="leaveReviewSign">Leave a review</h3>
+      <!-- Down below are 5 different sections which display the star ratings -->
+      <form action="#">
+        <!-- Machines -->
+        <p>Machines & Equipment:</p>
+        <!-- Name of the class -->
+        <div class="rating">
+            <!-- These stars is availaible from an oline template listed above -->
+            <!-- Thats where it came from ('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css') -->
+             <!-- The bx bx-star is the star icon while the word on the left represent the group of stars -->
+              <!-- Using the group of stars you can change the css and select them individually -->
+          <input type="number" name="machines_rating" hidden>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+        </div>
+
+        <!-- Staff -->
+        <p>Staff:</p>
+        <div class="rating">
+          <input type="number" name="staff_rating" hidden>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+        </div>
+
+        <!-- Location -->
+        <p>Location:</p>
+        <div class="rating">
+          <input type="number" name="location_rating" hidden>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+        </div>
+
+        <p>Cleanliness:</p>
+        <div class="rating">
+          <input type="number" name="clean_rating" hidden>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+        </div>
+
+        <p>Gym Atmosphere:</p>
+        <div class="rating">
+          <input type="number" name="atmosphere-rating" hidden>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+        </div>
+
+        <!-- Review Textarea -->
+        <textarea name="opinion" id="txtBox" cols="60" rows="8" placeholder="Your review..."></textarea>
+
+        <!-- Submit and Cancel Buttons -->
+        <div class="button-group">
+          <button type="submit" class="btn btn-submit">Submit</button>
+          <button class="btn btn-cancel">Cancel</button>
+        </div>
+      </form>
+
+       <!-- Area to Display Reviews -->
+    <div id="reviews">
+      <h3 class="leaveReviewSign">Reviews:</h3>
+      <div id="reviewsList"></div>
+    </div>
   </div>
-<% end %>
+  
+
+<!-- Javascript source code -->
+
+  <script src="gymReviewapp.js"></script>
+</body>
+</html>
