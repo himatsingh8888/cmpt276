@@ -1,19 +1,28 @@
-<h1>Log In</h1>
+<div class="auth-wrapper">
+  <div class="auth-box">
+    <div class="auth-header">
+      <img src="<%= asset_path('logo.png') %>" alt="RateMyGym Logo" class="auth-logo">
+      <h2>Login to RateMyGym</h2>
+    </div>
 
-<%= form_with(url: login_path, method: :post) do %>
-  <div>
-    <%= label_tag :username %>
-    <%= text_field_tag :username, params[:username] %>
+    <%= form_with(url: login_path, local: true, class: "auth-form") do |f| %>
+      <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, required: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, required: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Login", class: "btn-submit" %>
+      </div>
+    <% end %>
+
+    <div class="auth-footer">
+      <p>Don't have an account? <a href="<%= new_user_path %>">Sign up</a></p>
+    </div>
   </div>
-
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-
-  <div>
-    <%= submit_tag "Log In" %>
-  </div>
-<% end %>
-
-<%= link_to "Sign up", new_user_path %>
+</div>

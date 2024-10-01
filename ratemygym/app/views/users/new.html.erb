@@ -1,28 +1,31 @@
-<h1>Sign up</h1>
+<div class="auth-wrapper">
+  <div class="auth-box">
+    <div class="auth-header">
+      <img src="<%= asset_path('logo.png') %>" alt="RateMyGym Logo" class="auth-logo">
+      <h2>Sign Up for RateMyGym</h2>
+    </div>
 
-<%= form_with(model: @user, local: true) do |form| %>
-  <div>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form_with(model: @user, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :username %>
+        <%= form.text_field :username, class: 'form-control', placeholder: 'Choose a username' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: 'form-control', placeholder: 'Create a password' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm your password' %>
+      </div>
+
+      <%= form.submit "Sign Up", class: "btn-submit" %>
+    <% end %>
+
+    <div class="auth-footer">
+      <p>Already have an account? <%= link_to 'Log in', login_path %></p>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div>
-    <%= form.submit "Sign up" %>
-  </div>
-
-  <% if flash[:alert] %>
-    <p><%= flash[:alert] %></p>
-  <% end %>
-<% end %>
-
-<%= link_to "Log in", login_path %>
+</div>

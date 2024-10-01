@@ -7,16 +7,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= yield :head %>
+    <!-- Include the custom stylesheets -->
+    <% if controller_name == 'sessions' || controller_name == 'users' %>
+      <%= stylesheet_link_tag 'login', media: 'all', 'data-turbo-track': 'reload' %>
+    <% end %>
 
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
   </head>
 
   <body>
@@ -29,5 +25,12 @@
     <% end %>
 
     <%= yield %>
+
+    <!-- Include the custom JavaScript files -->
+    <% if controller_name == 'sessions' || controller_name == 'users' %>
+      <%= javascript_include_tag 'login', 'data-turbo-track': 'reload' %>
+    <% end %>
+
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
   </body>
 </html>
