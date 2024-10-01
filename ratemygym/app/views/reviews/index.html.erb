@@ -3,38 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="gymReview.css">
+  <%= stylesheet_link_tag 'gymReviews', media: 'all', 'data-turbo-track': 'reload' %>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <title>Review and Rating System</title>
+  <title>Review and Rating System for <%= @gym.name %></title>
 </head>
 <body>
-    
-     <!-- Original Review Form -->
-     <div class="wrapper">
-  <div class="container">
-    <!-- New Header section -->
-    <header>
-    <img src="https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg" alt="Description of the image" class="full-width-image">
 
-      <h1>Gym Reviews for Goodlife Fitness </h1>
-      <p class="text">Leave your reviews for different aspects of the gym below.</p>
-    </header>
+  <!-- Original Review Form -->
+  <div class="wrapper">
+    <div class="container">
+      <!-- New Header section -->
+      <header>
+        <img src="<%= asset_path('logo.png') %>" alt="Description of the image" class="full-width-image">
+        <h1>Gym Reviews for <%= @gym.name %></h1>
+        <p class="text">Leave your reviews for different aspects of the gym below.</p>
+      </header>
 
-
-   
-        
       <h3 class="leaveReviewSign">Leave a review</h3>
+
       <!-- Down below are 5 different sections which display the star ratings -->
-      <form action="#">
+      <%= form_with(model: [@gym, @gym.reviews.new], local: true) do |form| %>
         <!-- Machines -->
         <p>Machines & Equipment:</p>
-        <!-- Name of the class -->
         <div class="rating">
-            <!-- These stars is availaible from an oline template listed above -->
-            <!-- Thats where it came from ('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css') -->
-             <!-- The bx bx-star is the star icon while the word on the left represent the group of stars -->
-              <!-- Using the group of stars you can change the css and select them individually -->
-          <input type="number" name="machines_rating" hidden>
+          <%= form.hidden_field :machines_rating %>
           <i class='bx bx-star starMachines'></i>
           <i class='bx bx-star starMachines'></i>
           <i class='bx bx-star starMachines'></i>
@@ -45,7 +37,7 @@
         <!-- Staff -->
         <p>Staff:</p>
         <div class="rating">
-          <input type="number" name="staff_rating" hidden>
+          <%= form.hidden_field :staff_rating %>
           <i class='bx bx-star starStaff'></i>
           <i class='bx bx-star starStaff'></i>
           <i class='bx bx-star starStaff'></i>
@@ -56,7 +48,7 @@
         <!-- Location -->
         <p>Location:</p>
         <div class="rating">
-          <input type="number" name="location_rating" hidden>
+          <%= form.hidden_field :location_rating %>
           <i class='bx bx-star starLocation'></i>
           <i class='bx bx-star starLocation'></i>
           <i class='bx bx-star starLocation'></i>
@@ -64,9 +56,10 @@
           <i class='bx bx-star starLocation'></i>
         </div>
 
+        <!-- Cleanliness -->
         <p>Cleanliness:</p>
         <div class="rating">
-          <input type="number" name="clean_rating" hidden>
+          <%= form.hidden_field :clean_rating %>
           <i class='bx bx-star starClean'></i>
           <i class='bx bx-star starClean'></i>
           <i class='bx bx-star starClean'></i>
@@ -74,9 +67,10 @@
           <i class='bx bx-star starClean'></i>
         </div>
 
+        <!-- Gym Atmosphere -->
         <p>Gym Atmosphere:</p>
         <div class="rating">
-          <input type="number" name="atmosphere-rating" hidden>
+          <%= form.hidden_field :atmosphere_rating %>
           <i class='bx bx-star starAsphere'></i>
           <i class='bx bx-star starAsphere'></i>
           <i class='bx bx-star starAsphere'></i>
@@ -85,25 +79,41 @@
         </div>
 
         <!-- Review Textarea -->
-        <textarea name="opinion" id="txtBox" cols="60" rows="8" placeholder="Your review..."></textarea>
+        <div class="form-group">
+          <%= form.text_area :comment, placeholder: "Your review..." %>
+        </div>
 
         <!-- Submit and Cancel Buttons -->
         <div class="button-group">
-          <button type="submit" class="btn btn-submit">Submit</button>
-          <button class="btn btn-cancel">Cancel</button>
+          <%= form.submit "Submit", class: "btn btn-submit" %>
+          <%= link_to "Cancel", gym_path(@gym), class: "btn btn-cancel" %>
         </div>
-      </form>
+      <% end %>
 
-       <!-- Area to Display Reviews -->
-    <div id="reviews">
-      <h3 class="leaveReviewSign">Reviews:</h3>
-      <div id="reviewsList"></div>
+      <!-- Area to Display Reviews -->
+      <div id="reviews">
+        <h3 class="leaveReviewSign">Reviews:</h3>
+        <div id="reviewsList">
+          <% if @gym.reviews.any? %>
+            <% @gym.reviews.each do |review| %>
+              <div class="review">
+                <strong>Rating:</strong> <%= review.rating %> / 5
+                <p><%= review.comment %></p>
+                <p>Reviewed by <%= review.user.username %> on <%= review.created_at.strftime("%B %d, %Y") %></p>
+              </div>
+              <hr>
+            <% end %>
+          <% else %>
+            <p>No reviews yet. Be the first to review this gym!</p>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
-  
 
-<!-- Javascript source code -->
+  <!-- Javascript source code -->
+  <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
 
-  <script src="gymReviewapp.js"></script>
 </body>
 </html>

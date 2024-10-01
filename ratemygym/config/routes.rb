@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # Gym routes with nested reviews for review creation
+  # Gym routes with nested reviews for both viewing and creating reviews
   resources :gyms, only: [:show] do
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:index, :create] # Add :index to display reviews
   end
   
   # Home route (can be changed as needed)
