@@ -1,0 +1,8 @@
+// Append the newly created review to the reviews list
+$(".reviews-list").prepend("<%= j render @review %>");
+
+// Clear the form fields
+$("form")[0].reset();
+
+// Optionally display a success message
+alert('Review submitted successfully!');

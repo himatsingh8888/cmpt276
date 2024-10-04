@@ -62,6 +62,9 @@ body {
    
 }
 
+.wrapper h1 {
+    font-size: 3rem; /* Adjust the value to your preference */
+}
 
 
 /* * This is for the "leave the review sign" */ 
