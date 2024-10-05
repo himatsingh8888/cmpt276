@@ -7965,3 +7965,73 @@ Processing by GymsController#show as HTML
 Completed 200 OK in 59ms (Views: 49.4ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for ::1 at 2024-10-04 23:01:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 943.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1014.6ms | GC: 0.0ms)
+Completed 200 OK in 1053ms (Views: 1043.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2024-10-04 23:01:26 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"avneet", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "avneet"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://[::1]:3000/home/index
+Completed 302 Found in 1056ms (ActiveRecord: 104.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2024-10-04 23:01:27 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 47.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 65.8ms | GC: 0.0ms)
+Completed 200 OK in 103ms (Views: 94.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for ::1 at 2024-10-04 23:01:30 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (623.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (101.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:45
+  Rendered gyms/show.html.erb within layouts/application (Duration: 292.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 319.7ms | GC: 0.0ms)
+Completed 200 OK in 1803ms (Views: 235.2ms | ActiveRecord: 739.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/3" for ::1 at 2024-10-04 23:01:34 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGym Load (0.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 3]]
+  ↳ app/views/gyms/show.html.erb:45
+  Rendered gyms/show.html.erb within layouts/application (Duration: 42.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 74.3ms | GC: 0.0ms)
+Completed 200 OK in 97ms (Views: 76.3ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/5" for ::1 at 2024-10-04 23:01:40 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 5]]
+  ↳ app/views/gyms/show.html.erb:45
+  Rendered gyms/show.html.erb within layouts/application (Duration: 52.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 83.4ms | GC: 0.0ms)
+Completed 200 OK in 117ms (Views: 96.2ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
