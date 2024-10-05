@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_04_072022) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_05_225936) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_04_072022) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "machines_rating"
+    t.integer "staff_rating"
+    t.integer "location_rating"
+    t.integer "clean_rating"
+    t.integer "atmosphere_rating"
     t.index ["gym_id"], name: "index_reviews_on_gym_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
