@@ -26,6 +26,7 @@ class ReviewsController < ApplicationController
     end
   end
 
+  #  Requires this parameters whnever sumbtting the reviews which are each of the 5 ratings plus the comment
   def review_params
     params.require(:review).permit(:rating, :staff_rating, :location_rating, :clean_rating, :atmosphere_rating, :comment)
   end

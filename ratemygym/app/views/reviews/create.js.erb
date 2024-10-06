@@ -1,8 +1,0 @@
-// Append the newly created review to the reviews list
-$("#reviewsList").append("<%= j render @review %>");
-
-// Optionally clear the form after successful submission
-$('form')[0].reset();
-
-// Clear star ratings or do any other UI adjustments here
-$(".rating .active").removeClass("active");
