@@ -14,21 +14,26 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id  # Assign the current user's ID to the review
 
     if @review.save
-      redirect_to gym_reviews_path(@gym), notice: "Review submitted successfully!"
+      respond_to do |format|
+        format.js  # Renders the create.js.erb file
+        format.html { redirect_to gym_path(@gym), notice: "Review added successfully!" }
+      end
     else
-      redirect_to gym_reviews_path(@gym), alert: "Failed to submit review."
+      respond_to do |format|
+        format.js { render js: "alert('Failed to submit the review.')" }
+        format.html { redirect_to gym_path(@gym), alert: "Failed to submit the review." }
+      end
     end
   end
 
-  private
-
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:rating, :staff_rating, :location_rating, :clean_rating, :atmosphere_rating, :comment)
   end
+end
 
   def require_login
     unless current_user
       redirect_to login_path, alert: "You must be logged in to submit a review."
     end
-  end
+
 end

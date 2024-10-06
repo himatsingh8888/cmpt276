@@ -21,10 +21,10 @@
     <h3 class="leaveReviewSign">Leave a review</h3>
     
     <!-- Review form -->
-    <%= form_with(model: [ @gym, @gym.reviews.new ], local: true) do |form| %>
+    <%= form_with(model: [ @gym, @gym.reviews.new ], remote: true) do |form| %>
       <p>Machines & Equipment:</p>
       <div class="rating">
-        <%= form.hidden_field :rating, value: 5 %>  <!-- Example for the rating system -->
+        <%= form.hidden_field :rating, id: "machines_rating" %>  
         <i class='bx bx-star starMachines'></i>
         <i class='bx bx-star starMachines'></i>
         <i class='bx bx-star starMachines'></i>
@@ -32,9 +32,56 @@
         <i class='bx bx-star starMachines'></i>
       </div>
       
-      <!-- Add other fields for Staff, Location, etc., similar to above -->
+      <!-- Staff -->
+      <p>Staff:</p>
+      <div class="rating">
+        <%= form.hidden_field :staff_rating, id: "staff_rating" %> <!-- Closing %> was missing -->
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+      </div>
 
-      <textarea name="opinion" id="txtBox" cols="60" rows="8" placeholder="Your review..."></textarea>
+      <!-- Location -->
+      <p>Location:</p>
+      <div class="rating">
+        <%= form.hidden_field :location_rating, id: "location_rating" %>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+      </div>
+
+      <!-- Cleanliness -->
+      <p>Cleanliness:</p>
+      <div class="rating">
+        <%= form.hidden_field :clean_rating, id: "clean_rating" %>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+      </div>
+
+      <!-- Gym Atmosphere -->
+      <p>Gym Atmosphere:</p>
+      <div class="rating">
+        <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating" %>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+      </div>
+
+      <!-- Textarea for opinion -->
+      <div class="form-group">
+        <%= form.text_area :comment, placeholder: "Your review..." %>
+      </div>
+
+      <!-- Submit button -->
       <div class="button-group">
         <%= form.submit "Submit", class: "btn btn-submit" %>
       </div>
@@ -45,15 +92,19 @@
     <% @reviews.each do |review| %>
       <div class="review-item">
         <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
-        <p><strong>Rating:</strong> <%= review.rating %> / 5</p>
-        <p><%= review.comment %></p>
+        <p><strong>Machines Rating:</strong> <%= '★' * review.rating + '☆' * (5 - review.rating) %></p>
+        <p><strong>Staff Rating:</strong> <%= '★' * review.staff_rating + '☆' * (5 - review.staff_rating) %></p>
+        <p><strong>Location Rating:</strong> <%= '★' * review.location_rating + '☆' * (5 - review.location_rating) %></p>
+        <p><strong>Cleanliness Rating:</strong> <%= '★' * review.clean_rating + '☆' * (5 - review.clean_rating) %></p>
+        <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * review.atmosphere_rating + '☆' * (5 - review.atmosphere_rating) %></p>
+        <p><strong>Comment:</strong> <%= review.comment %></p>
         <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
       </div>
       <hr>
     <% end %>
-  </div>
 
-  <!-- Include the new JavaScript for interactivity -->
-  <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
+    <!-- Include the new JavaScript for interactivity -->
+    <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
+  </div>
 </body>
 </html>

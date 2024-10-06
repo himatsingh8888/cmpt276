@@ -28,6 +28,9 @@ star_machines.forEach((item, idx) => {
             star_machines[i].classList.add('bxs-star');    // Add filled star class
             star_machines[i].classList.add('active');      // Mark as active
         }
+
+        // Update hidden field with the selected rating (idx + 1 because idx is zero-based)
+        document.getElementById('machines_rating').value = idx + 1;
     });
 });
 
@@ -46,6 +49,8 @@ star_staff.forEach((item, idx) => {
             star_staff[i].classList.add('bxs-star');    // Add filled star class
             star_staff[i].classList.add('active');      // Mark as active
         }
+        // Update hidden field with the selected rating (idx + 1 because idx is zero-based)
+        document.getElementById('staff_rating').value = idx + 1;
     });
 });
 
@@ -62,6 +67,8 @@ star_Location.forEach((item, idx) => {
             star_Location[i].classList.add('bxs-star');    // Add filled star class
             star_Location[i].classList.add('active');      // Mark as active
         }
+        // Update hidden field with the selected rating (idx + 1 because idx is zero-based)
+        document.getElementById('location_rating').value = idx + 1;
     });
 });
 
@@ -78,6 +85,8 @@ star_clean.forEach((item, idx) => {
             star_clean[i].classList.add('bxs-star');    // Add filled star class
             star_clean[i].classList.add('active');      // Mark as active
         }
+        // Update hidden field with the selected rating (idx + 1 because idx is zero-based)
+        document.getElementById('clean_rating').value = idx + 1;
     });
 });
 
@@ -95,6 +104,8 @@ star_atmosphere.forEach((item, idx) => {
             star_atmosphere[i].classList.add('bxs-star');    // Add filled star class
             star_atmosphere[i].classList.add('active');      // Mark as active
         }
+        // Update hidden field with the selected rating (idx + 1 because idx is zero-based)
+        document.getElementById('atmosphere_rating').value = idx + 1;
     });
 });
 
@@ -125,7 +136,7 @@ function generateStars(rating) {
 
 document.querySelector('.btn-submit').addEventListener('click', function(e) {
     // Prevent form reload
-    e.preventDefault();  
+    //e.preventDefault();  
 
     // Get the amount of stars that are selected from each star count
     const machinesRating = document.querySelectorAll('.starMachines.active').length;

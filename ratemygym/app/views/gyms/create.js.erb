@@ -6,3 +6,23 @@ $("form")[0].reset();
 
 // Optionally display a success message
 alert('Review submitted successfully!');
+// Add the new review to the reviews list dynamically
+const reviewList = document.getElementById('reviewsList');
+reviewList.innerHTML += `
+  <div class="review-item">
+    <p><strong>Reviewed by:</strong> <%= @review.user.username %></p>
+    <p><strong>Machines Rating:</strong> ${'<span style="color: gold;">' + '★'.repeat(@review.rating) + '☆'.repeat(5 - @review.rating) + '</span>'}</p>
+    <p><strong>Staff Rating:</strong> ${'<span style="color: gold;">' + '★'.repeat(@review.staff_rating) + '☆'.repeat(5 - @review.staff_rating) + '</span>'}</p>
+    <p><strong>Location Rating:</strong> ${'<span style="color: gold;">' + '★'.repeat(@review.location_rating) + '☆'.repeat(5 - @review.location_rating) + '</span>'}</p>
+    <p><strong>Cleanliness Rating:</strong> ${'<span style="color: gold;">' + '★'.repeat(@review.clean_rating) + '☆'.repeat(5 - @review.clean_rating) + '</span>'}</p>
+    <p><strong>Gym Atmosphere Rating:</strong> ${'<span style="color: gold;">' + '★'.repeat(@review.atmosphere_rating) + '☆'.repeat(5 - @review.atmosphere_rating) + '</span>'}</p>
+    <p><strong>Comment:</strong> <%= @review.comment %></p>
+    <p><em>Posted on <%= @review.created_at.strftime("%b %d, %Y") %></em></p>
+  </div>
+  <hr>
+`;
+
+// Optionally clear the form inputs after submission
+document.querySelector('textarea[name="comment"]').value = '';
+document.querySelectorAll('.bxs-star').forEach(star => star.classList.replace('bxs-star', 'bx-star'));
+document.querySelectorAll('.active').forEach(star => star.classList.remove('active'));
