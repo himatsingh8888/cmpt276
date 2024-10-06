@@ -29,8 +29,8 @@ button {
 
   header h1 {
     text-align: center;
-    font-size: 145px;
-    margin: 100px 0;
+    font-size: 70px;
+    margin: 40px 0;
     font-family: sans-serif;
     color: black;
   }
@@ -64,4 +64,26 @@ button {
     /* Changes border color on hover */
     border-width: 5px; 
   }
+
+    /* Styles for the fixed header */
+  .fixed-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 150px; /* Fixed height of the header */
+  }
+
+  /* Adding padding to the main content to avoid overlapping with the header */
+  .page-rate-my-gym main {
+    padding-top: 150px; /* Adjust according to the height of the header */
+  }
+
+  
+
+  
+
+  
   
