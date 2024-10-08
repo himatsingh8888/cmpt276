@@ -7,6 +7,7 @@
   
   <!-- Include the new CSS for reviews -->
   <%= stylesheet_link_tag 'gymReviews', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- this is the icon for the star logo -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -37,6 +38,7 @@
         <i class='bx bx-star starMachines'></i>
       </div>
       
+      <!-- Everything undernieth this is the same for the remaining boxes -->
       <!-- Staff -->
       <p>Staff:</p>
       <div class="rating">
@@ -97,6 +99,8 @@
     <% @reviews.each do |review| %>
       <div class="review-item">
       <!-- Display the format of the reviews which are posted on the website -->
+      <!-- for each rating it calcuates the number of star selcted and times it by full star to show how much they pciked -->
+      <!-- It does the same for empty where it calcuates hiw many remained empty and shows that many stars -->
         <br>
         <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
         <br>
