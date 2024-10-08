@@ -1,4 +1,4 @@
-**What our project is about: ** 
+### **What our project is about:** 
 
 Our project, **RateMyGym**, is a platform that allows users to rate and review local gyms based on various factors such as price, equipment, location, and environemnt, etc.  
 Built using **Ruby on Rails** and adhering to the **Model-View-Controller (MVC)** architecture, the platform includes essential features like a secure login system and an 
@@ -8,7 +8,7 @@ The front-end uses HTML, CSS, and JavaScript to deliver an intuitive interface, 
 display of gym information and reviews. **PostgreSQL** is used for database management, and the development process follows best practices, including feature tracking 
 and version control through GitHub.
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Retrospective
 
 #### What went right:
@@ -19,12 +19,6 @@ and version control through GitHub.
 - Created the ability to **write and post reviews**, allowing users to share their thoughts on different gym aspects like machines, staff, cleanliness, etc.
 
 #### What went wrong:
-Here's a more in-depth version of the **"What went wrong"** section, highlighting the problems and how each issue was resolved:
-
----
-
-#### What went wrong:
-
 - **Gym description and image mismatch**: When setting up the gym pages, we encountered an issue where gyms were incorrectly linked, resulting in the wrong descriptions
   and images being displayed on the unique gym pages. For example, clicking on "She’s Fit" would show the description for "Club 16" and vice versa. 
       - **How we fixed it**: We identified that the gym IDs in the database were incorrectly linked to the gym images and descriptions in the view files. We fixed this
@@ -67,4 +61,9 @@ Here's a more in-depth version of the **"What went wrong"** section, highlightin
 - **Back button**: Add a back button on the review pages, allowing users to easily navigate back to the gym listing or previous pages.
 
 More changes to come. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Testing and Code Quality
+
+Test cases and results: 
 
