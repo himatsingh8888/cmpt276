@@ -20,3 +20,35 @@
 body {
   font-family: Arial, sans-serif;
 }
+
+/* Header Styling */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Ensure space between title and logout button */
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa; /* Adjust background color as needed */
+  position: relative; /* Allow header to scroll with the page */
+}
+
+/* Style for the logout button */
+.logout-button {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff5a5a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: auto; /* Push the logout button to the right */
+}
+
+.logout-button:hover {
+  background-color: #ff3a3a;
+}
+
+/* Remove fixed header styling */
+.page-rate-my-gym header {
+  position: static; /* Make the header scroll with the page */
+}
