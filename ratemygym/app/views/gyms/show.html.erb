@@ -7,9 +7,13 @@
   
   <!-- Include the new CSS for reviews -->
   <%= stylesheet_link_tag 'gymReviews', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- this is the icon for the star logo -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+  <button class="back-button" onclick="window.history.back();">
+    ← Back
+  </button>
 
   <div class="wrapper">
     <header>
@@ -21,9 +25,14 @@
     <h3 class="leaveReviewSign">Leave a review</h3>
     
     <!-- Review form -->
+    <!-- this form is linked with models being gym and gym.reviews -->
+    <!-- remote true means that the form submission will happen in the background using JavaScript without a full page reload  -->
     <%= form_with(model: [ @gym, @gym.reviews.new ], remote: true) do |form| %>
       <p>Machines & Equipment:</p>
       <div class="rating">
+      <!-- form.hidden_field == store datat ina form that is hidden from the users view -->
+      <!-- hidden model called rating where it will be set -->
+      <!-- id is a special value which allows to be used by javascript code -->
         <%= form.hidden_field :rating, id: "machines_rating" %>  
         <i class='bx bx-star starMachines'></i>
         <i class='bx bx-star starMachines'></i>
@@ -32,6 +41,7 @@
         <i class='bx bx-star starMachines'></i>
       </div>
       
+      <!-- Everything undernieth this is the same for the remaining boxes -->
       <!-- Staff -->
       <p>Staff:</p>
       <div class="rating">
@@ -91,13 +101,24 @@
     <h3 class="leaveReviewSign">Reviews:</h3>
     <% @reviews.each do |review| %>
       <div class="review-item">
+      <!-- Display the format of the reviews which are posted on the website -->
+      <!-- for each rating it calcuates the number of star selcted and times it by full star to show how much they pciked -->
+      <!-- It does the same for empty where it calcuates hiw many remained empty and shows that many stars -->
+        <br>
+        <br>
         <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
+        <br>
         <p><strong>Machines Rating:</strong> <%= '★' * review.rating + '☆' * (5 - review.rating) %></p>
         <p><strong>Staff Rating:</strong> <%= '★' * review.staff_rating + '☆' * (5 - review.staff_rating) %></p>
         <p><strong>Location Rating:</strong> <%= '★' * review.location_rating + '☆' * (5 - review.location_rating) %></p>
         <p><strong>Cleanliness Rating:</strong> <%= '★' * review.clean_rating + '☆' * (5 - review.clean_rating) %></p>
         <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * review.atmosphere_rating + '☆' * (5 - review.atmosphere_rating) %></p>
+        <br>
+        <br>
         <p><strong>Comment:</strong> <%= review.comment %></p>
+        <br>
+        <br>
+        <br>
         <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
       </div>
       <hr>

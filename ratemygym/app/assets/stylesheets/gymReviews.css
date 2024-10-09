@@ -233,3 +233,20 @@ textarea {
 .button-group .btn-cancel:hover {
     background: var(--light);
 }
+
+.back-button {
+    position: absolute;
+    top: 20px; /* Adjust based on your design */
+    left: 20px; /* Adjust based on your design */
+    padding: 0.8rem 1.2rem;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: var(--blue-d-1);
+}
