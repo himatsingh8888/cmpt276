@@ -15236,3 +15236,644 @@ Processing by GymsController#show as HTML
 Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 1.7ms (9 queries, 6 cached) | GC: 0.0ms)
 
 
+  [1m[36mGym Load (22.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (12.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (22.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (630.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ratemygym_development"[0m
+  [1m[35m (189.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ratemygym_test"[0m
+  [1m[35m (5826.2ms)[0m  [1m[35mCREATE DATABASE "ratemygym_development" ENCODING = 'unicode'[0m
+  [1m[35m (2838.6ms)[0m  [1m[35mCREATE DATABASE "ratemygym_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (89.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "gyms" CASCADE[0m
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "description" text, "image_url" character varying)[0m
+  [1m[35m (11.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "staff_rating" integer, "location_rating" integer, "clean_rating" integer, "atmosphere_rating" integer, "opinion" text)[0m
+  [1m[35m (22.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (23.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (15.7ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (23.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241006042812)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241004072022),
+(20240926233311),
+(20240926215019),
+(20240926215018),
+(20240921234828);[0m
+  [1m[35m (28.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-09 02:12:21.939455', '2024-10-09 02:12:21.939457') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '56ae524b8e90ceaebfb3de911bf07abc3a6347e9', '2024-10-09 02:12:21.947275', '2024-10-09 02:12:21.947276') RETURNING "key"[0m
+  [1m[35mSQL (114.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "gyms" CASCADE[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "description" text, "image_url" character varying)[0m
+  [1m[35m (10.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "staff_rating" integer, "location_rating" integer, "clean_rating" integer, "atmosphere_rating" integer, "opinion" text)[0m
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (13.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241006042812)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241004072022),
+(20240926233311),
+(20240926215019),
+(20240926215018),
+(20240921234828);[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-09 02:12:22.302061', '2024-10-09 02:12:22.302064') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (3.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-10-09 02:12:22.308813' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '56ae524b8e90ceaebfb3de911bf07abc3a6347e9', '2024-10-09 02:12:22.318138', '2024-10-09 02:12:22.318142') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (3.4ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "GoodLife Fitness"], ["location", nil], ["created_at", "2024-10-09 02:12:22.481890"], ["updated_at", "2024-10-09 02:12:22.481890"], ["description", "A well-equipped fitness center."], ["image_url", "https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (3.0ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anytime Fitness"], ["location", nil], ["created_at", "2024-10-09 02:12:22.493670"], ["updated_at", "2024-10-09 02:12:22.493670"], ["description", "24-hour gym access."], ["image_url", "https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Planet Fitness"], ["location", nil], ["created_at", "2024-10-09 02:12:22.502043"], ["updated_at", "2024-10-09 02:12:22.502043"], ["description", "Affordable gym memberships."], ["image_url", "https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "She's Fit"], ["location", nil], ["created_at", "2024-10-09 02:12:22.509399"], ["updated_at", "2024-10-09 02:12:22.509399"], ["description", "Women-only gym."], ["image_url", "https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (3.4ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Club 16"], ["location", nil], ["created_at", "2024-10-09 02:12:22.518130"], ["updated_at", "2024-10-09 02:12:22.518130"], ["description", "A local fitness club."], ["image_url", "data:image/png;base64,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"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGym Load (0.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (3.1ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "GoodLife Fitness"], ["location", nil], ["created_at", "2024-10-09 02:18:00.207985"], ["updated_at", "2024-10-09 02:18:00.207985"], ["description", "A well-equipped fitness center."], ["image_url", "https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg"]]
+  [1m[36mTRANSACTION (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.1ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anytime Fitness"], ["location", nil], ["created_at", "2024-10-09 02:18:00.229237"], ["updated_at", "2024-10-09 02:18:00.229237"], ["description", "24-hour gym access."], ["image_url", "https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.7ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Planet Fitness"], ["location", nil], ["created_at", "2024-10-09 02:18:00.239235"], ["updated_at", "2024-10-09 02:18:00.239235"], ["description", "Affordable gym memberships."], ["image_url", "https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.4ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "She's Fit"], ["location", nil], ["created_at", "2024-10-09 02:18:00.246348"], ["updated_at", "2024-10-09 02:18:00.246348"], ["description", "Women-only gym."], ["image_url", "https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (3.2ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Club 16"], ["location", nil], ["created_at", "2024-10-09 02:18:00.254146"], ["updated_at", "2024-10-09 02:18:00.254146"], ["description", "A local fitness club."], ["image_url", "data:image/png;base64,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"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.6ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gold's Gym"], ["location", nil], ["created_at", "2024-10-09 02:18:00.262693"], ["updated_at", "2024-10-09 02:18:00.262693"], ["description", "brand new, ergonomic, sleek, TechnoGym machines. There's enough to go around for everyone even during the busiest times of the day"], ["image_url", "https://robknappdesign.com/wp-content/uploads/2021/07/golds-gym-socal-logo-featured.jpg"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGym Load (0.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (4162.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ratemygym_development"[0m
+  [1m[35m (161.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ratemygym_test"[0m
+  [1m[35m (3027.7ms)[0m  [1m[35mCREATE DATABASE "ratemygym_development" ENCODING = 'unicode'[0m
+  [1m[35m (2841.5ms)[0m  [1m[35mCREATE DATABASE "ratemygym_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (103.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "gyms" CASCADE[0m
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "description" text, "image_url" character varying)[0m
+  [1m[35m (10.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "staff_rating" integer, "location_rating" integer, "clean_rating" integer, "atmosphere_rating" integer, "opinion" text)[0m
+  [1m[35m (22.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241006042812)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241004072022),
+(20240926233311),
+(20240926215019),
+(20240926215018),
+(20240921234828);[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-09 02:19:06.859887', '2024-10-09 02:19:06.859890') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '56ae524b8e90ceaebfb3de911bf07abc3a6347e9', '2024-10-09 02:19:06.866209', '2024-10-09 02:19:06.866210') RETURNING "key"[0m
+  [1m[35mSQL (112.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "gyms" CASCADE[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "description" text, "image_url" character varying)[0m
+  [1m[35m (11.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (26.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "staff_rating" integer, "location_rating" integer, "clean_rating" integer, "atmosphere_rating" integer, "opinion" text)[0m
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241006042812)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241004072022),
+(20240926233311),
+(20240926215019),
+(20240926215018),
+(20240921234828);[0m
+  [1m[35m (23.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-09 02:19:07.221571', '2024-10-09 02:19:07.221573') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-10-09 02:19:07.228526' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '56ae524b8e90ceaebfb3de911bf07abc3a6347e9', '2024-10-09 02:19:07.235279', '2024-10-09 02:19:07.235281') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.6ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "GoodLife Fitness"], ["location", nil], ["created_at", "2024-10-09 02:19:07.409623"], ["updated_at", "2024-10-09 02:19:07.409623"], ["description", "A well-equipped fitness center."], ["image_url", "https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.2ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anytime Fitness"], ["location", nil], ["created_at", "2024-10-09 02:19:07.423449"], ["updated_at", "2024-10-09 02:19:07.423449"], ["description", "24-hour gym access."], ["image_url", "https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (5.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Planet Fitness"], ["location", nil], ["created_at", "2024-10-09 02:19:07.433710"], ["updated_at", "2024-10-09 02:19:07.433710"], ["description", "Affordable gym memberships."], ["image_url", "https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (3.2ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "She's Fit"], ["location", nil], ["created_at", "2024-10-09 02:19:07.446501"], ["updated_at", "2024-10-09 02:19:07.446501"], ["description", "Women-only gym."], ["image_url", "https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.3ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Club 16"], ["location", nil], ["created_at", "2024-10-09 02:19:07.455383"], ["updated_at", "2024-10-09 02:19:07.455383"], ["description", "A local fitness club."], ["image_url", "data:image/png;base64,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"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (1.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gold's Gym"], ["location", nil], ["created_at", "2024-10-09 02:20:25.112325"], ["updated_at", "2024-10-09 02:20:25.112325"], ["description", "Brand new equipment and machines"], ["image_url", nil]]
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (3264.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ratemygym_development"[0m
+  [1m[35m (160.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ratemygym_test"[0m
+  [1m[35m (2874.1ms)[0m  [1m[35mCREATE DATABASE "ratemygym_development" ENCODING = 'unicode'[0m
+  [1m[35m (2831.1ms)[0m  [1m[35mCREATE DATABASE "ratemygym_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (86.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "gyms" CASCADE[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "description" text, "image_url" character varying)[0m
+  [1m[35m (11.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (33.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "staff_rating" integer, "location_rating" integer, "clean_rating" integer, "atmosphere_rating" integer, "opinion" text)[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (22.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241006042812)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241004072022),
+(20240926233311),
+(20240926215019),
+(20240926215018),
+(20240921234828);[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-09 02:23:10.076411', '2024-10-09 02:23:10.076413') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '56ae524b8e90ceaebfb3de911bf07abc3a6347e9', '2024-10-09 02:23:10.083317', '2024-10-09 02:23:10.083318') RETURNING "key"[0m
+  [1m[35mSQL (118.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "gyms" CASCADE[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "gyms" ("id" bigserial primary key, "name" character varying, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "description" text, "image_url" character varying)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "gym_id" bigint NOT NULL, "user_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "staff_rating" integer, "location_rating" integer, "clean_rating" integer, "atmosphere_rating" integer, "opinion" text)[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_gym_id" ON "reviews" ("gym_id")[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (23.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_6c9548e8b1"
+FOREIGN KEY ("gym_id")
+  REFERENCES "gyms" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241006042812)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20241004072022),
+(20240926233311),
+(20240926215019),
+(20240926215018),
+(20240921234828);[0m
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-09 02:23:10.445634', '2024-10-09 02:23:10.445637') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-10-09 02:23:10.450818' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '56ae524b8e90ceaebfb3de911bf07abc3a6347e9', '2024-10-09 02:23:10.455145', '2024-10-09 02:23:10.455147') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.6ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "GoodLife Fitness"], ["location", nil], ["created_at", "2024-10-09 02:23:10.595011"], ["updated_at", "2024-10-09 02:23:10.595011"], ["description", "A well-equipped fitness center."], ["image_url", "https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anytime Fitness"], ["location", nil], ["created_at", "2024-10-09 02:23:10.616023"], ["updated_at", "2024-10-09 02:23:10.616023"], ["description", "24-hour gym access."], ["image_url", "https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.6ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Planet Fitness"], ["location", nil], ["created_at", "2024-10-09 02:23:10.624086"], ["updated_at", "2024-10-09 02:23:10.624086"], ["description", "Affordable gym memberships."], ["image_url", "https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "She's Fit"], ["location", nil], ["created_at", "2024-10-09 02:23:10.630988"], ["updated_at", "2024-10-09 02:23:10.630988"], ["description", "Women-only gym."], ["image_url", "https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (4.8ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Club 16"], ["location", nil], ["created_at", "2024-10-09 02:23:10.638676"], ["updated_at", "2024-10-09 02:23:10.638676"], ["description", "A local fitness club."], ["image_url", "data:image/png;base64,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"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGym Create (2.6ms)[0m  [1m[32mINSERT INTO "gyms" ("name", "location", "created_at", "updated_at", "description", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gold's Gym"], ["location", nil], ["created_at", "2024-10-09 02:23:10.648614"], ["updated_at", "2024-10-09 02:23:10.648614"], ["description", "Brand new equipment and machines"], ["image_url", "https://robknappdesign.com/wp-content/uploads/2021/07/golds-gym-socal-logo-featured.jpg"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGym Load (0.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2024-10-08 19:23:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 80.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 93.4ms | GC: 0.0ms)
+Completed 200 OK in 106ms (Views: 102.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2024-10-08 19:23:43 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"gurtaj23", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gurtaj23"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | GC: 0.0ms)
+Completed 200 OK in 133ms (Views: 16.0ms | ActiveRecord: 9.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2024-10-08 19:23:49 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"gurtaj23", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gurtaj23"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2024-10-08 19:23:51 -0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 12.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | GC: 0.0ms)
+Completed 200 OK in 65ms (Views: 30.2ms | ActiveRecord: 3.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2024-10-08 19:24:09 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"gurtaj", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gurtaj"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "gurtaj"], ["password_digest", "[FILTERED]"], ["created_at", "2024-10-09 02:24:10.111528"], ["updated_at", "2024-10-09 02:24:10.111528"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://[::1]:3000/login
+Completed 302 Found in 229ms (ActiveRecord: 22.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2024-10-08 19:24:10 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2024-10-08 19:24:20 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"gurtaj", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gurtaj"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://[::1]:3000/home/index
+Completed 302 Found in 204ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2024-10-08 19:24:20 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:24:23 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  Rendered gyms/show.html.erb within layouts/application (Duration: 32.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | GC: 0.0ms)
+Completed 200 OK in 82ms (Views: 42.1ms | ActiveRecord: 6.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/3" for ::1 at 2024-10-08 19:24:29 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 3]]
+  ↳ app/views/gyms/show.html.erb:102
+  Rendered gyms/show.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:24:33 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  Rendered gyms/show.html.erb within layouts/application (Duration: 13.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/6/reviews" for ::1 at 2024-10-08 19:24:37 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"3", "staff_rating"=>"", "location_rating"=>"", "clean_rating"=>"", "atmosphere_rating"=>"", "comment"=>""}, "commit"=>"Submit", "gym_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+Redirected to http://[::1]:3000/gyms/6
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:24:38 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  Rendered gyms/show.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/6/reviews" for ::1 at 2024-10-08 19:24:44 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"5", "staff_rating"=>"5", "location_rating"=>"5", "clean_rating"=>"4", "atmosphere_rating"=>"3", "comment"=>"dsgfsdg"}, "commit"=>"Submit", "gym_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (16.8ms)[0m  [1m[32mINSERT INTO "reviews" ("gym_id", "user_id", "rating", "comment", "created_at", "updated_at", "staff_rating", "location_rating", "clean_rating", "atmosphere_rating", "opinion") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["gym_id", 6], ["user_id", 1], ["rating", 5], ["comment", "dsgfsdg"], ["created_at", "2024-10-09 02:24:45.071308"], ["updated_at", "2024-10-09 02:24:45.071308"], ["staff_rating", 5], ["location_rating", 5], ["clean_rating", 4], ["atmosphere_rating", 3], ["opinion", nil]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+Redirected to http://[::1]:3000/gyms/6
+Completed 302 Found in 38ms (ActiveRecord: 18.3ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:24:45 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:108
+  Rendered gyms/show.html.erb within layouts/application (Duration: 18.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:25:21 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:108
+  Rendered gyms/show.html.erb within layouts/application (Duration: 22.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 35.6ms | ActiveRecord: 9.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:25:43 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:108
+  Rendered gyms/show.html.erb within layouts/application (Duration: 21.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 31.9ms | ActiveRecord: 10.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:25:51 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:108
+  Rendered gyms/show.html.erb within layouts/application (Duration: 27.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | GC: 0.0ms)
+Completed 200 OK in 63ms (Views: 34.4ms | ActiveRecord: 11.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:26:01 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.6ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:109
+  Rendered gyms/show.html.erb within layouts/application (Duration: 22.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | GC: 0.0ms)
+Completed 200 OK in 69ms (Views: 38.3ms | ActiveRecord: 10.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/gyms/6/reviews" for ::1 at 2024-10-08 19:26:09 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"rating"=>"2", "staff_rating"=>"3", "location_rating"=>"2", "clean_rating"=>"2", "atmosphere_rating"=>"3", "comment"=>"decent"}, "commit"=>"Submit", "gym_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (2.9ms)[0m  [1m[32mINSERT INTO "reviews" ("gym_id", "user_id", "rating", "comment", "created_at", "updated_at", "staff_rating", "location_rating", "clean_rating", "atmosphere_rating", "opinion") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["gym_id", 6], ["user_id", 1], ["rating", 2], ["comment", "decent"], ["created_at", "2024-10-09 02:26:09.128592"], ["updated_at", "2024-10-09 02:26:09.128592"], ["staff_rating", 3], ["location_rating", 2], ["clean_rating", 2], ["atmosphere_rating", 3], ["opinion", nil]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+Redirected to http://[::1]:3000/gyms/6
+Completed 302 Found in 20ms (ActiveRecord: 4.9ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:26:09 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:109
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:109
+  Rendered gyms/show.html.erb within layouts/application (Duration: 19.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 28.4ms | ActiveRecord: 1.0ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/6" for ::1 at 2024-10-08 19:26:24 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 6]]
+  ↳ app/views/gyms/show.html.erb:102
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:109
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:109
+  Rendered gyms/show.html.erb within layouts/application (Duration: 24.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 31.3ms | ActiveRecord: 1.2ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/5" for ::1 at 2024-10-08 19:26:34 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGym Load (0.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 5]]
+  ↳ app/views/gyms/show.html.erb:102
+  Rendered gyms/show.html.erb within layouts/application (Duration: 12.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/4" for ::1 at 2024-10-08 19:26:38 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 4]]
+  ↳ app/views/gyms/show.html.erb:102
+  Rendered gyms/show.html.erb within layouts/application (Duration: 9.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+

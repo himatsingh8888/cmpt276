@@ -105,6 +105,7 @@
       <!-- for each rating it calcuates the number of star selcted and times it by full star to show how much they pciked -->
       <!-- It does the same for empty where it calcuates hiw many remained empty and shows that many stars -->
         <br>
+        <br>
         <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
         <br>
         <p><strong>Machines Rating:</strong> <%= '★' * review.rating + '☆' * (5 - review.rating) %></p>
@@ -113,7 +114,9 @@
         <p><strong>Cleanliness Rating:</strong> <%= '★' * review.clean_rating + '☆' * (5 - review.clean_rating) %></p>
         <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * review.atmosphere_rating + '☆' * (5 - review.atmosphere_rating) %></p>
         <br>
+        <br>
         <p><strong>Comment:</strong> <%= review.comment %></p>
+        <br>
         <br>
         <br>
         <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
