@@ -16330,3 +16330,82 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-10-09 21:08:51 -0700
+Started GET "/" for 127.0.0.1 at 2024-10-09 21:08:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 892.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 893.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 1274ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/himat/cmpt276/ratemygym/tmp/cache/assets/sprockets/v4.0.0/h5/h54SwMGej-em3zNOOgUASo-gPxjraoCFDgqTFqWJUKw.cache.23720.30176.477645, C:/Users/himat/cmpt276/ratemygym/tmp/cache/assets/sprockets/v4.0.0/h5/h54SwMGej-em3zNOOgUASo-gPxjraoCFDgqTFqWJUKw.cache)):
+
+Causes:
+Errno::EACCES (Permission denied @ rb_file_s_rename - (C:/Users/himat/cmpt276/ratemygym/tmp/cache/assets/sprockets/v4.0.0/h5/h54SwMGej-em3zNOOgUASo-gPxjraoCFDgqTFqWJUKw.cache.23720.30176.477645, C:/Users/himat/cmpt276/ratemygym/tmp/cache/assets/sprockets/v4.0.0/h5/h54SwMGej-em3zNOOgUASo-gPxjraoCFDgqTFqWJUKw.cache))
+  
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:93:in `fetch'
+sprockets (4.2.1) lib/sprockets/base.rb:71:in `file_digest'
+sprockets (4.2.1) lib/sprockets.rb:213:in `block in <module:Sprockets>'
+sprockets (4.2.1) lib/sprockets/dependencies.rb:68:in `resolve_dependency'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:54:in `block in resolve_dependency'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:54:in `resolve_dependency'
+sprockets (4.2.1) lib/sprockets/loader.rb:290:in `block in resolve_dependencies'
+sprockets (4.2.1) lib/sprockets/loader.rb:290:in `map'
+sprockets (4.2.1) lib/sprockets/loader.rb:290:in `resolve_dependencies'
+sprockets (4.2.1) lib/sprockets/loader.rb:54:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:333:in `block in fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:329:in `each'
+sprockets (4.2.1) lib/sprockets/loader.rb:329:in `each_with_index'
+sprockets (4.2.1) lib/sprockets/loader.rb:329:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2686.9ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 2912.7ms | GC: 0.5ms)
+Completed 200 OK in 3124ms (Views: 3007.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-10-09 22:44:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 77.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 89.7ms | GC: 0.0ms)
+Completed 200 OK in 103ms (Views: 98.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
