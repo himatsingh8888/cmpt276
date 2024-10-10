@@ -109,3 +109,18 @@ Finished in 1.370940s, 1.4589 runs/s, 4.3766 assertions/s.
 
 Conclusion:
 The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the review submission functionality works as expected, allowing users to add reviews when logged in and restricting access when not logged in..
+
+
+### Instructions for running:
+1) Make sure that you have Ruby version 3.3.5 or later installed
+2) MAke sure you have Rails version 7.2.1 installed
+3) Also make sure you have PostgreSQL installed and that it runs properly
+4) Clone the repository
+5) Then install all the dependencies by running the command 'bundle install'
+6)  Then set up the database by running the commands:
+'rails db:create'
+'rails db:migrate'
+
+7) Next seed the database using the command 'rails db:seed'
+8) Now you can start the rails server with the command 'rails server'
+9) on the terminal navigate to http://localhost:3000 to view our application !
