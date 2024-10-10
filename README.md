@@ -48,3 +48,18 @@ More changes to come.
 
 Test cases and results: 
 
+
+
+### Running instructions: 
+1) make sure that you have ruby 3.3.5 or more installed (thats the one we have)
+2) make sure you have rails version 7.2.1
+3) clone the respository
+4) install all the dependencies with the command "bundle install" on terminal
+5) Set up the database
+- in order to do this you need to make sure PostgreSQL is running
+- then create and migrate the databse using the commands:
+- 'rails db:create'
+- 'rails db:migrate'
+  6) Next seed the databse using the command 'rails db:seed'
+  7) now start rails server 'rails server'
+  8) now open our application in your browser by navigating to http://localhost:3000
