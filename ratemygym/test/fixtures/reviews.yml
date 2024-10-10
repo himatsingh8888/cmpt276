@@ -1,11 +1,11 @@
-review_one:
+one:
   comment: "Great gym!"
   rating: 5
-  user: testuser # This links to the 'testuser' in users.yml
-  gym: goodlife # This links to the 'goodlife' gym in gyms.yml
+  user_id: 1
+  gym_id: 1 # This must correspond to a valid gym in gyms.yml
 
-review_two:
-  comment: "Not too bad"
-  rating: 3
-  user: testuser # Again linked to 'testuser' from users.yml
-  gym: goodlife # Linked to 'goodlife' gym in gyms.yml
+two:
+  comment: "Amazing gym!"
+  rating: 4
+  user_id: 2
+  gym_id: 2 # This must correspond to a valid gym in gyms.yml

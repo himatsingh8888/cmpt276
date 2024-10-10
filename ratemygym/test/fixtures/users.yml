@@ -1,3 +1,9 @@
-testuser:
-  username: testuser
+one:
+  id: 1
+  username: "testuser1"
   password_digest: <%= BCrypt::Password.create('password123') %>
+
+two:
+  id: 2
+  username: "testuser2"
+  password_digest: <%= BCrypt::Password.create('password456') %>

@@ -1,3 +1,9 @@
-goodlife:
+one:
+  id: 1
   name: "GoodLife Fitness"
   description: "Best gym"
+
+two:
+  id: 2
+  name: "Anytime Fitness"
+  description: "24/7 gym"
