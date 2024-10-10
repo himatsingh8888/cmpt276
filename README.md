@@ -108,4 +108,4 @@ Finished in 1.370940s, 1.4589 runs/s, 4.3766 assertions/s.
 2 runs, 6 assertions, 0 failures, 0 errors, 0 skips
 
 Conclusion:
-The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the review submission functionality works as expected, allowing users to add reviews when logged in and restricting access when not logged in.
+The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the review submission functionality works as expected, allowing users to add reviews when logged in and restricting access when not logged in..
