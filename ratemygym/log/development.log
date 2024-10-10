@@ -15919,3 +15919,414 @@ Processing by GymsController#show as HTML
 Completed 200 OK in 69ms (Views: 36.6ms | ActiveRecord: 11.5ms (2 queries, 0 cached) | GC: 23.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-10-09 17:30:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 23.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-09 17:30:55 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 328ms (ActiveRecord: 24.2ms (1 query, 0 cached) | GC: 16.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:30:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.2ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-10-09 17:43:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 67.9ms | GC: 7.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | GC: 8.5ms)
+Completed 200 OK in 78ms (Views: 77.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 8.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-09 17:43:39 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 329ms (ActiveRecord: 27.2ms (1 query, 0 cached) | GC: 11.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:43:40 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 11.8ms | GC: 7.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 8.2ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-10-09 17:43:58 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-09 17:44:03 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 292ms (ActiveRecord: 8.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:44:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:44:05 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 19.3ms | GC: 12.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | GC: 12.7ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 12.7ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:44:22 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 11.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 4.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:44:22 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:44:50 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.3ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:46:06 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateMyGym</title>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+<body class="page-rate-my-gym">
+
+  <!-- Fixed Header with Logout button -->
+  <header class="fixed-header">
+    <h1>Rate My Gym</h1>
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, method: :delete, class: "logout-button" %>
+    <% end %>
+  </header>
+
+  <main>
+    <!-- Clickable images to access gyms -->
+    <div class="gym-images">
+      <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "GoodLife Fitness"), gym_path(1) %>
+      <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Anytime Fitness"), gym_path(2) %>
+      <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Planet Fitness"), gym_path(3) %>
+      <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "She's Fit"), gym_path(4) %>
+      <%= link_to image_tag("data:image/png;base64,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
+    </div>
+  </main>
+
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+</body>
+</html>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:36: unterminated string meets end of file
+          end
+             ^
+/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:36: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>RateMyGym</title>
+7:    
+8:      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+9:    </head>
+10:    <body class="page-rate-my-gym">
+11:    
+12:      <!-- Fixed Header with Logout button -->
+13:      <header class="fixed-header">
+14:        <h1>Rate My Gym</h1>
+15:        <% if current_user %>
+16:          <%= link_to "Logout", logout_path, method: :delete, class: "logout-button" %>
+17:        <% end %>
+18:      </header>
+19:    
+20:      <main>
+21:        <!-- Clickable images to access gyms -->
+22:        <div class="gym-images">
+23:          <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "GoodLife Fitness"), gym_path(1) %>
+24:          <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Anytime Fitness"), gym_path(2) %>
+25:          <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Planet Fitness"), gym_path(3) %>
+26:          <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "She's Fit"), gym_path(4) %>
+27:          <%= link_to image_tag("data:image/png;base64,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
+28:        </div>
+29:      </main>
+30:    
+31:      <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+32:    </body>
+33:    </html>
+  
+app/views/home/index.html.erb:36: unterminated string meets end of file
+app/views/home/index.html.erb:36: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/" for 127.0.0.1 at 2024-10-09 17:54:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 61.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 64.8ms | GC: 0.0ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-09 17:54:55 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 312ms (ActiveRecord: 23.7ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 17:54:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateMyGym</title>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+<body class="page-rate-my-gym">
+
+  <!-- Fixed Header with Logout button -->
+  <header class="fixed-header">
+    <h1>Rate My Gym</h1>
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, method: :delete, class: "logout-button" %>
+    <% end %>
+  </header>
+
+  <main>
+    <!-- Clickable images to access gyms -->
+    <div class="gym-images">
+    <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "GoodLife Fitness"), gym_path(1) %>
+    <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Anytime Fitness"), gym_path(2) %>
+    <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Planet Fitness"), gym_path(3) %>
+    <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "She's Fit"), gym_path(4) %>
+    <%= link_to image_tag("data:image/png;base64,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
+    <%= link_to image_tag("https://robknappdesign.com/wp-content/uploads/2021/07/golds-gym-socal-logo-featured.jpg", alt: "Gold's Gym"), gym_path(6) %>
+    </div>
+  </main>
+
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+</body>
+</html>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+...   <%= link_to image_tag("https://robknappdesign.com/wp-cont...
+...                          ^~~~~
+/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:28: unknown regexp options - rbkappdg
+...age_tag("https://robknappdesign.com/wp-content/uploads/2021/...
+...                ^~~~~~~~~~~~~~~
+/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:30: unknown regexp option - a
+  </main>
+   ^~~~~
+/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:34: unknown regexp options - htl
+</html>
+ ^~~~~
+/Users/damin/cmpt276-2/ratemygym/app/views/home/index.html.erb:37: unterminated string meets end of file
+          end
+             ^
+)
+1:    <!DOCTYPE html>
+2:    <html>
+3:    <head>
+4:      <meta charset="UTF-8">
+5:      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:      <title>RateMyGym</title>
+7:    
+8:      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+9:    </head>
+10:    <body class="page-rate-my-gym">
+11:    
+12:      <!-- Fixed Header with Logout button -->
+13:      <header class="fixed-header">
+14:        <h1>Rate My Gym</h1>
+15:        <% if current_user %>
+16:          <%= link_to "Logout", logout_path, method: :delete, class: "logout-button" %>
+17:        <% end %>
+18:      </header>
+19:    
+20:      <main>
+21:        <!-- Clickable images to access gyms -->
+22:        <div class="gym-images">
+23:        <%= link_to image_tag("https://www.opatoday.com/wp-content/uploads/2020/11/23.jpg", alt: "GoodLife Fitness"), gym_path(1) %>
+24:        <%= link_to image_tag("https://www.10thousanddesign.com/assets/uploads/anytime-fitness/66741_AF_Case_Study_ELEMENTS_10T_01_LogoImage_2680x1600.jpg", alt: "Anytime Fitness"), gym_path(2) %>
+25:        <%= link_to image_tag("https://logos-world.net/wp-content/uploads/2022/01/Planet-Fitness-Symbol.png", alt: "Planet Fitness"), gym_path(3) %>
+26:        <%= link_to image_tag("https://us2-photo.nextdoor.com/business_logo/eb/e9/ebe9c192f1042d5b9d2d404a198f2e51.png", alt: "She's Fit"), gym_path(4) %>
+27:        <%= link_to image_tag("data:image/png;base64,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
+28:        <%= link_to image_tag("https://robknappdesign.com/wp-content/uploads/2021/07/golds-gym-socal-logo-featured.jpg", alt: "Gold's Gym"), gym_path(6) %>
+29:        </div>
+30:      </main>
+31:    
+32:      <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+33:    </body>
+34:    </html>
+  
+app/views/home/index.html.erb:28: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/index.html.erb:28: unknown regexp options - rbkappdg
+app/views/home/index.html.erb:30: unknown regexp option - a
+app/views/home/index.html.erb:34: unknown regexp options - htl
+app/views/home/index.html.erb:37: unterminated string meets end of file
+Started GET "/" for 127.0.0.1 at 2024-10-09 18:04:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 31.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-09 18:04:21 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"damin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "damin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 329ms (ActiveRecord: 24.0ms (1 query, 0 cached) | GC: 16.2ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 18:04:21 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-10-09 18:04:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 127.0.0.1 at 2024-10-09 18:04:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 127.0.0.1 at 2024-10-09 18:08:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/home/index" for 127.0.0.1 at 2024-10-09 18:08:40 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 69.6ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 71.6ms | GC: 2.2ms)
+Completed 200 OK in 72ms (Views: 61.8ms | ActiveRecord: 10.1ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-10-09 18:08:41 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-10-09 18:08:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 2.2ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
