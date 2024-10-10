@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     else
       # If login fails, render the login form again with an error message
       flash.now[:alert] = "Invalid username or password"
-      render :new
+      render :new, status: :unprocessable_entity  # This sets the status to 422
     end
   end
 

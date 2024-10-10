@@ -1,13 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+review_one:
+  comment: "Great gym!"
+  rating: 5
+  user: testuser # This links to the 'testuser' in users.yml
+  gym: goodlife # This links to the 'goodlife' gym in gyms.yml
 
-one:
-  gym: one
-  user: one
-  rating: 1
-  comment: MyText
-
-two:
-  gym: two
-  user: two
-  rating: 1
-  comment: MyText
+review_two:
+  comment: "Not too bad"
+  rating: 3
+  user: testuser # Again linked to 'testuser' from users.yml
+  gym: goodlife # Linked to 'goodlife' gym in gyms.yml
