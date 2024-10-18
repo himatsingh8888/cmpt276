@@ -108,11 +108,12 @@
         <br>
         <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
         <br>
-        <p><strong>Machines Rating:</strong> <%= '★' * review.rating + '☆' * (5 - review.rating) %></p>
-        <p><strong>Staff Rating:</strong> <%= '★' * review.staff_rating + '☆' * (5 - review.staff_rating) %></p>
-        <p><strong>Location Rating:</strong> <%= '★' * review.location_rating + '☆' * (5 - review.location_rating) %></p>
-        <p><strong>Cleanliness Rating:</strong> <%= '★' * review.clean_rating + '☆' * (5 - review.clean_rating) %></p>
-        <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * review.atmosphere_rating + '☆' * (5 - review.atmosphere_rating) %></p>
+        <p><strong>Machines Rating:</strong> <%= '★' * (review.rating || 0) + '☆' * (5 - (review.rating || 0)) %></p>
+        <p><strong>Staff Rating:</strong> <%= '★' * (review.staff_rating || 0) + '☆' * (5 - (review.staff_rating || 0)) %></p>
+        <p><strong>Location Rating:</strong> <%= '★' * (review.location_rating || 0) + '☆' * (5 - (review.location_rating || 0)) %></p>
+        <p><strong>Cleanliness Rating:</strong> <%= '★' * (review.clean_rating || 0) + '☆' * (5 - (review.clean_rating || 0)) %></p>
+        <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * (review.atmosphere_rating || 0) + '☆' * (5 - (review.atmosphere_rating || 0)) %></p>
+
         <br>
         <br>
         <p><strong>Comment:</strong> <%= review.comment %></p>
