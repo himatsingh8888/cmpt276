@@ -18,4 +18,4 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  url: <%= ENV['DATABASE_URL'] %>  # This will use the DATABASE_URL from Render
+  url: postgresql://himat_user:VTUoIZ5jd6uGjnGSoVwXRWqmqZE2dHBi@dpg-cs91dsjqf0us738hheig-a/himat<%= ENV['DATABASE_URL'] %>  # This is the DATABASE_URL from Render
