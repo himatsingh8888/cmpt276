@@ -67,13 +67,40 @@ body {
 }
 
 
+/* Section for the average reviews such as the title and the titles for each */
+/* This is the css for the overall section of average reviews */
+.averages-section {
+    padding: 80px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  /* This is for the header called "Average Reviews" */
+  .averages-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 5 rem;
+    padding-bottom: 40px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* These are for the mini titles for each header which are behind the stars */
+  .averages-section .average-titles {
+    font-size: 20px;
+    text-align: center;
+  }
+
+
 /* * This is for the "leave the review sign" */ 
 /* The writing above the stars submisson */
 .wrapper h3 {
+    text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1 rem;
-    align-items: center;
+    padding-bottom: 40px;
+    padding-top: 100px;
 }
 
 /* This is for the stars where people can use to rate things */
@@ -87,6 +114,7 @@ body {
     color: var(--yellow);
     margin-top: 1rem; /* Space between text and stars */
     margin-bottom: 2rem;
+
 
 }
 

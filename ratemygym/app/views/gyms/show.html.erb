@@ -20,9 +20,46 @@
       <img src="<%= @gym.image_url %>" alt="Gym image" class="full-width-image">
       <h1>Gym Reviews for <%= @gym.name %></h1>
       <p class="text"><%= @gym.description %></p>
+      
     </header>
+    
+    <div class="averages-section">
+      <h2 class="averageReviews">Average Reviews</h2>
+    
 
-    <h3 class="leaveReviewSign">Leave a review</h3>
+      <div class="average-rating">
+        <p class= "average-titles"><strong>Average Machines Rating:</strong>
+        <%= star_rating_display(@average_machines_rating) %></p>
+        <br>
+      </div>
+
+      <div class="average-rating">
+      <p class= "average-titles"><strong>Average Staff Rating:</strong>
+        <%= star_rating_display(@average_staff_rating) %></p>
+        <br>
+      </div>
+
+      <div class="average-rating">
+      <p class= "average-titles"><strong>Average Location Rating:</strong>
+        <%= star_rating_display(@average_location_rating) %></p>
+        <br>
+      </div>
+
+      <div class="average-rating">
+      <p class= "average-titles"><strong>Average Cleanliness Rating:</strong>
+        <%= star_rating_display(@average_cleanliness_rating) %></p>
+        <br>
+      </div>
+      
+      <div class="average-rating">
+      <p class= "average-titles"><strong>Average Gym Atmosphere Rating:</strong>
+        <%= star_rating_display(@average_atmosphere_rating) %></p>
+        <br>
+      </div>
+    </div>
+
+
+    <h3 class="leaveReviewSign">Leave a Review</h3>
     
     <!-- Review form -->
     <!-- this form is linked with models being gym and gym.reviews -->
