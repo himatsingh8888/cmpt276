@@ -17,7 +17,7 @@
 
   <div class="wrapper">
     <header>
-      <img src="<%= @gym.image_url %>" alt="Gym image" class="full-width-image">
+      <%= image_tag @gym.image_url, alt: "Gym image", class: "full-width-image" %>
       <h1>Gym Reviews for <%= @gym.name %></h1>
       <p class="text"><%= @gym.description %></p>
       
