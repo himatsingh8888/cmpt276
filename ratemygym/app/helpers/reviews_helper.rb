@@ -33,4 +33,6 @@ module ReviewsHelper
         # Return the combined HTML for full, half, and empty stars
         full_stars + half_star + empty_stars
     end
+
+   
 end

@@ -25,37 +25,57 @@
     
     <div class="averages-section">
       <h2 class="averageReviews">Average Reviews</h2>
-    
+  
+
+        <div class="average-rating">
+            <div class="average-content">
+              <p class="average-titles"><strong>Average Machines Rating:</strong></p>
+              <div class="star-rating">
+                  <%= star_rating_display(@average_machines_rating) %>
+              </div>
+            </div>
+          <br>
+        </div>
+
+
+        <div class="average-rating">
+          <div class="average-content">
+            <p class="average-titles"><strong>Average Staff Rating:</strong></p>
+            <div class="star-rating">
+              <%= star_rating_display(@average_staff_rating) %>
+            </div>
+          </div>
+          <br>
+        </div>
 
       <div class="average-rating">
-        <p class= "average-titles"><strong>Average Machines Rating:</strong>
-        <%= star_rating_display(@average_machines_rating) %></p>
+        <div class="average-content">
+          <p class="average-titles"><strong>Average Location Rating:</strong></p>
+          <div class="star-rating">
+            <%= star_rating_display(@average_location_rating) %>
+          </div>
+        </div>
         <br>
       </div>
 
       <div class="average-rating">
-      <p class= "average-titles"><strong>Average Staff Rating:</strong>
-        <%= star_rating_display(@average_staff_rating) %></p>
+        <div class="average-content">
+          <p class="average-titles"><strong>Average Cleanliness Rating:</strong></p>
+          <div class="star-rating">
+            <%= star_rating_display(@average_cleanliness_rating) %>
+          </div>
+        </div>
         <br>
       </div>
-
-      <div class="average-rating">
-      <p class= "average-titles"><strong>Average Location Rating:</strong>
-        <%= star_rating_display(@average_location_rating) %></p>
-        <br>
+          
+    <div class="average-rating">
+      <div class="average-content">
+        <p class="average-titles"><strong>Average Gym Atmosphere Rating:</strong></p>
+        <div class="star-rating">
+          <%= star_rating_display(@average_atmosphere_rating) %>
+        </div>
       </div>
-
-      <div class="average-rating">
-      <p class= "average-titles"><strong>Average Cleanliness Rating:</strong>
-        <%= star_rating_display(@average_cleanliness_rating) %></p>
-        <br>
-      </div>
-      
-      <div class="average-rating">
-      <p class= "average-titles"><strong>Average Gym Atmosphere Rating:</strong>
-        <%= star_rating_display(@average_atmosphere_rating) %></p>
-        <br>
-      </div>
+      <br>
     </div>
 
 
