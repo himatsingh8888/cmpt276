@@ -62,3 +62,30 @@ body {
 .page-rate-my-gym {
   padding-top: 70px; /* Ensure the content starts below the fixed header */
 }
+.notice, .alert {
+  position: fixed;
+  top: 60px; /* Shift the message lower */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0.95;
+}
+
+.notice {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+  border: 1px solid #81c784;
+}
+
+.alert {
+  background-color: #fce4e4;
+  color: #c62828;
+  border: 1px solid #e57373;
+}
+
