@@ -12,19 +12,21 @@ class ReviewsController < ApplicationController
   def create
     @review = @gym.reviews.new(review_params)
     @review.user_id = current_user.id  # Assign the current user's ID to the review
-
+  
     if @review.save
       respond_to do |format|
         format.js  
         format.html { redirect_to gym_path(@gym), notice: "Review added successfully!" }
       end
     else
+      Rails.logger.error(@review.errors.full_messages)  # Log the error messages
       respond_to do |format|
-        format.js { render js: "alert('Failed to submit the review.')" }
+        format.js { render js: "alert('Failed to submit the review: #{@review.errors.full_messages.join(', ')}')" }
         format.html { redirect_to gym_path(@gym), alert: "Failed to submit the review." }
       end
     end
   end
+  
 
   # Render the edit form
   def edit
@@ -60,7 +62,7 @@ class ReviewsController < ApplicationController
   
   # Require parameters when submitting the reviews
   def review_params
-    params.require(:review).permit(:overall_rating, :comment)
+    params.require(:review).permit(:rating, :staff_rating, :location_rating, :clean_rating, :atmosphere_rating, :comment)
   end
 
   # Ensure the user is logged in
