@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Review for <%= @gym.name %> - RateMyGym</title>
+  
+  <!-- Include the CSS for reviews -->
+  <%= stylesheet_link_tag 'gymReviews', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- This is the icon for the star logo -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <button class="back-button" onclick="window.location.href = '<%= home_index_path %>';"> 
+    ← Back 
+  </button>
+
+  <div class="wrapper">
+    <header>
+      <%= image_tag @gym.image_url, alt: "Gym image", class: "full-width-image" %>
+      <h1>Edit Review for <%= @gym.name %></h1>
+    </header>
+
+    <h3 class="leaveReviewSign">Edit Your Review</h3>
+
+    <!-- Review edit form -->
+    <%= form_with(model: [@gym, @review], local: true) do |form| %>
+      <p>Machines & Equipment:</p>
+      <div class="rating">
+        <%= form.hidden_field :rating, id: "machines_rating", value: @review.rating %>  
+        <i class='bx bx-star starMachines'></i>
+        <i class='bx bx-star starMachines'></i>
+        <i class='bx bx-star starMachines'></i>
+        <i class='bx bx-star starMachines'></i>
+        <i class='bx bx-star starMachines'></i>
+      </div>
+
+      <p>Staff:</p>
+      <div class="rating">
+        <%= form.hidden_field :staff_rating, id: "staff_rating", value: @review.staff_rating %> 
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+        <i class='bx bx-star starStaff'></i>
+      </div>
+
+      <p>Location:</p>
+      <div class="rating">
+        <%= form.hidden_field :location_rating, id: "location_rating", value: @review.location_rating %>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+        <i class='bx bx-star starLocation'></i>
+      </div>
+
+      <p>Cleanliness:</p>
+      <div class="rating">
+        <%= form.hidden_field :clean_rating, id: "clean_rating", value: @review.clean_rating %>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+        <i class='bx bx-star starClean'></i>
+      </div>
+
+      <p>Gym Atmosphere:</p>
+      <div class="rating">
+        <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating", value: @review.atmosphere_rating %>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+        <i class='bx bx-star starAsphere'></i>
+      </div>
+
+      <!-- Textarea for opinion -->
+      <div class="form-group">
+        <%= form.text_area :comment, placeholder: "Your review...", value: @review.comment %>
+      </div>
+
+      <!-- Submit button -->
+      <div class="button-group">
+        <%= form.submit "Update Review", class: "btn btn-submit" %>
+      </div>
+    <% end %>
+
+    <!-- Include the new JavaScript for interactivity -->
+    <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
+  </div>
+</body>
+</html>

@@ -7,7 +7,6 @@
   
   <!-- Include the new CSS for reviews -->
   <%= stylesheet_link_tag 'gymReviews', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <!-- this is the icon for the star logo -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -20,33 +19,29 @@
       <%= image_tag @gym.image_url, alt: "Gym image", class: "full-width-image" %>
       <h1>Gym Reviews for <%= @gym.name %></h1>
       <p class="text"><%= @gym.description %></p>
-      
     </header>
     
     <div class="averages-section">
       <h2 class="averageReviews">Average Reviews</h2>
-  
-
-        <div class="average-rating">
-            <div class="average-content">
-              <p class="average-titles"><strong>Average Machines Rating:</strong></p>
-              <div class="star-rating">
-                  <%= star_rating_display(@average_machines_rating) %>
-              </div>
-            </div>
-          <br>
-        </div>
-
-
-        <div class="average-rating">
-          <div class="average-content">
-            <p class="average-titles"><strong>Average Staff Rating:</strong></p>
-            <div class="star-rating">
-              <%= star_rating_display(@average_staff_rating) %>
-            </div>
+      <div class="average-rating">
+        <div class="average-content">
+          <p class="average-titles"><strong>Average Machines Rating:</strong></p>
+          <div class="star-rating">
+            <%= star_rating_display(@average_machines_rating) %>
           </div>
-          <br>
         </div>
+        <br>
+      </div>
+
+      <div class="average-rating">
+        <div class="average-content">
+          <p class="average-titles"><strong>Average Staff Rating:</strong></p>
+          <div class="star-rating">
+            <%= star_rating_display(@average_staff_rating) %>
+          </div>
+        </div>
+        <br>
+      </div>
 
       <div class="average-rating">
         <div class="average-content">
@@ -67,123 +62,110 @@
         </div>
         <br>
       </div>
-          
-    <div class="average-rating">
-      <div class="average-content">
-        <p class="average-titles"><strong>Average Gym Atmosphere Rating:</strong></p>
-        <div class="star-rating">
-          <%= star_rating_display(@average_atmosphere_rating) %>
+
+      <div class="average-rating">
+        <div class="average-content">
+          <p class="average-titles"><strong>Average Gym Atmosphere Rating:</strong></p>
+          <div class="star-rating">
+            <%= star_rating_display(@average_atmosphere_rating) %>
+          </div>
         </div>
+        <br>
       </div>
-      <br>
-    </div>
 
-
-    <h3 class="leaveReviewSign">Leave a Review</h3>
-    
-    <!-- Review form -->
-    <!-- this form is linked with models being gym and gym.reviews -->
-    <!-- remote true means that the form submission will happen in the background using JavaScript without a full page reload  -->
-    <%= form_with(model: [ @gym, @gym.reviews.new ], remote: true) do |form| %>
-      <p>Machines & Equipment:</p>
-      <div class="rating">
-      <!-- form.hidden_field == store datat ina form that is hidden from the users view -->
-      <!-- hidden model called rating where it will be set -->
-      <!-- id is a special value which allows to be used by javascript code -->
-        <%= form.hidden_field :rating, id: "machines_rating" %>  
-        <i class='bx bx-star starMachines'></i>
-        <i class='bx bx-star starMachines'></i>
-        <i class='bx bx-star starMachines'></i>
-        <i class='bx bx-star starMachines'></i>
-        <i class='bx bx-star starMachines'></i>
-      </div>
+      <h3 class="leaveReviewSign">Leave a Review</h3>
       
-      <!-- Everything undernieth this is the same for the remaining boxes -->
-      <!-- Staff -->
-      <p>Staff:</p>
-      <div class="rating">
-        <%= form.hidden_field :staff_rating, id: "staff_rating" %> <!-- Closing %> was missing -->
-        <i class='bx bx-star starStaff'></i>
-        <i class='bx bx-star starStaff'></i>
-        <i class='bx bx-star starStaff'></i>
-        <i class='bx bx-star starStaff'></i>
-        <i class='bx bx-star starStaff'></i>
-      </div>
+      <!-- Review form -->
+      <%= form_with(model: [ @gym, @gym.reviews.new ], remote: true) do |form| %>
+        <p>Machines & Equipment:</p>
+        <div class="rating">
+          <%= form.hidden_field :rating, id: "machines_rating" %>  
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+          <i class='bx bx-star starMachines'></i>
+        </div>
+        
+        <p>Staff:</p>
+        <div class="rating">
+          <%= form.hidden_field :staff_rating, id: "staff_rating" %>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+          <i class='bx bx-star starStaff'></i>
+        </div>
 
-      <!-- Location -->
-      <p>Location:</p>
-      <div class="rating">
-        <%= form.hidden_field :location_rating, id: "location_rating" %>
-        <i class='bx bx-star starLocation'></i>
-        <i class='bx bx-star starLocation'></i>
-        <i class='bx bx-star starLocation'></i>
-        <i class='bx bx-star starLocation'></i>
-        <i class='bx bx-star starLocation'></i>
-      </div>
+        <p>Location:</p>
+        <div class="rating">
+          <%= form.hidden_field :location_rating, id: "location_rating" %>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+          <i class='bx bx-star starLocation'></i>
+        </div>
 
-      <!-- Cleanliness -->
-      <p>Cleanliness:</p>
-      <div class="rating">
-        <%= form.hidden_field :clean_rating, id: "clean_rating" %>
-        <i class='bx bx-star starClean'></i>
-        <i class='bx bx-star starClean'></i>
-        <i class='bx bx-star starClean'></i>
-        <i class='bx bx-star starClean'></i>
-        <i class='bx bx-star starClean'></i>
-      </div>
+        <p>Cleanliness:</p>
+        <div class="rating">
+          <%= form.hidden_field :clean_rating, id: "clean_rating" %>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+          <i class='bx bx-star starClean'></i>
+        </div>
 
-      <!-- Gym Atmosphere -->
-      <p>Gym Atmosphere:</p>
-      <div class="rating">
-        <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating" %>
-        <i class='bx bx-star starAsphere'></i>
-        <i class='bx bx-star starAsphere'></i>
-        <i class='bx bx-star starAsphere'></i>
-        <i class='bx bx-star starAsphere'></i>
-        <i class='bx bx-star starAsphere'></i>
-      </div>
+        <p>Gym Atmosphere:</p>
+        <div class="rating">
+          <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating" %>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+          <i class='bx bx-star starAsphere'></i>
+        </div>
 
-      <!-- Textarea for opinion -->
-      <div class="form-group">
-        <%= form.text_area :comment, placeholder: "Your review..." %>
-      </div>
+        <div class="form-group">
+          <%= form.text_area :comment, placeholder: "Your review..." %>
+        </div>
 
-      <!-- Submit button -->
-      <div class="button-group">
-        <%= form.submit "Submit", class: "btn btn-submit" %>
-      </div>
+        <div class="button-group">
+          <%= form.submit "Submit", class: "btn btn-submit" %>
+        </div>
+      <% end %>
+
+      <!-- Display existing reviews -->
+      <h3 class="leaveReviewSign">Reviews:</h3>
+<% @reviews.each do |review| %>
+  <div class="review-item">
+    <br>
+    <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
+    <br>
+    <p><strong>Machines Rating:</strong> <%= '★' * (review.rating || 0) + '☆' * (5 - (review.rating || 0)) %></p>
+    <p><strong>Staff Rating:</strong> <%= '★' * (review.staff_rating || 0) + '☆' * (5 - (review.staff_rating || 0)) %></p>
+    <p><strong>Location Rating:</strong> <%= '★' * (review.location_rating || 0) + '☆' * (5 - (review.location_rating || 0)) %></p>
+    <p><strong>Cleanliness Rating:</strong> <%= '★' * (review.clean_rating || 0) + '☆' * (5 - (review.clean_rating || 0)) %></p>
+    <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * (review.atmosphere_rating || 0) + '☆' * (5 - (review.atmosphere_rating || 0)) %></p>
+
+    <br>
+    <p><strong>Comment:</strong> <%= review.comment %></p>
+    <br>
+    <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
+    
+    <% if review.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_gym_review_path(@gym, review), class: "btn btn-edit" %>
+      <%= link_to 'Delete', gym_review_path(@gym, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-delete" %>
     <% end %>
+    
+    <hr>
+  </div>
+<% end %>
 
-    <!-- Display existing reviews -->
-    <h3 class="leaveReviewSign">Reviews:</h3>
-    <% @reviews.each do |review| %>
-      <div class="review-item">
-      <!-- Display the format of the reviews which are posted on the website -->
-      <!-- for each rating it calcuates the number of star selcted and times it by full star to show how much they pciked -->
-      <!-- It does the same for empty where it calcuates hiw many remained empty and shows that many stars -->
-        <br>
-        <br>
-        <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
-        <br>
-        <p><strong>Machines Rating:</strong> <%= '★' * (review.rating || 0) + '☆' * (5 - (review.rating || 0)) %></p>
-        <p><strong>Staff Rating:</strong> <%= '★' * (review.staff_rating || 0) + '☆' * (5 - (review.staff_rating || 0)) %></p>
-        <p><strong>Location Rating:</strong> <%= '★' * (review.location_rating || 0) + '☆' * (5 - (review.location_rating || 0)) %></p>
-        <p><strong>Cleanliness Rating:</strong> <%= '★' * (review.clean_rating || 0) + '☆' * (5 - (review.clean_rating || 0)) %></p>
-        <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * (review.atmosphere_rating || 0) + '☆' * (5 - (review.atmosphere_rating || 0)) %></p>
-
-        <br>
-        <br>
-        <p><strong>Comment:</strong> <%= review.comment %></p>
-        <br>
-        <br>
-        <br>
-        <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
-      </div>
-      <hr>
-    <% end %>
-
-    <!-- Include the new JavaScript for interactivity -->
-    <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
+      <!-- Include the new JavaScript for interactivity -->
+      <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
+    </div>
   </div>
 </body>
 </html>
