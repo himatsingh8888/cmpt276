@@ -17,15 +17,19 @@ What Went Wrong:
 Incomplete Feature Development:
 
 We were unable to implement the filtering through reviews feature, which would have allowed users to sort reviews based on various criteria. Additionally, the likes and dislikes feature was not developed. This hindered our ability to enhance user interaction and engagement with the reviews.
+
 Review Creation Challenges:
 
 We faced difficulties in creating a review due to popup error handling. Users encountered messages that were not user-friendly, which affected their ability to submit reviews successfully. We identified these errors and created custom handling to provide clearer feedback to users.
+
 Error Handling and User Experience:
 
 The initial error messages were vague and not presentable, leading to confusion among users. We recognized the need for better user experience and updated the error handling messages to be more informative and visually appealing.
+
 Back Button Issues:
 
 The back button functionality did not work as intended. After troubleshooting, we discovered that the problem stemmed from incorrect redirection paths. This issue required additional attention to ensure that users could navigate back to previous pages seamlessly.
+
 How We Solved It:
 
 To address the review creation challenges, we refined the error messages, ensuring they were more descriptive and aligned with user expectations. This change improved the overall user experience when submitting reviews.
@@ -37,15 +41,19 @@ Things to Improve:
 Feature Completion:
 
 Prioritize the development of the filtering feature for reviews and the likes/dislikes feature in future iterations. These additions are critical for enhancing user engagement and feedback mechanisms.
+
 Enhanced User Feedback:
 
 Continue to refine error handling and user feedback mechanisms to ensure they are clear, concise, and visually engaging. This will help reduce confusion and improve user satisfaction.
+
 Comprehensive Testing:
 
 Implement a more robust testing strategy to catch issues related to redirection and feature functionality earlier in the development process.
+
 Improved Collaboration:
 
 Foster better communication within the team regarding feature responsibilities and timelines to ensure all features are developed as planned.
+
 Documentation and Tracking:
 
 Utilize GitHub Issues more effectively for feature tracking and documentation of ongoing tasks, which will help keep the team aligned and accountable.
