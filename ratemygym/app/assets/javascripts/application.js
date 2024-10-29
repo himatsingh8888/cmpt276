@@ -19,7 +19,7 @@ setTimeout(function() {
         message.remove();
     }, 500); // Delay to match fade out duration
     });
-}, 2500); // Dismiss after 2.5 seconds
+}, 4000); // Dismiss after 2.5 seconds
 });
 
 

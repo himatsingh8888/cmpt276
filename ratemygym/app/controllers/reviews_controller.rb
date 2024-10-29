@@ -12,20 +12,34 @@ class ReviewsController < ApplicationController
   def create
     @review = @gym.reviews.new(review_params)
     @review.user_id = current_user.id  # Assign the current user's ID to the review
+    
+    # Specify the required fields you want to check for presence
+    required_fields = %w[rating staff_rating location_rating clean_rating atmosphere_rating comment]
+    missing_fields = required_fields.select { |field| @review.send(field).blank? }
   
-    if @review.save
+    if missing_fields.any?
+      # If any required fields are blank, respond with an error
       respond_to do |format|
-        format.js  
-        format.html { redirect_to gym_path(@gym), notice: "Review added successfully!" }
+        format.js { render js: "alert('Please fill all fields before submitting the review')" }
+        format.html { redirect_to gym_path(@gym), alert: "Please fill in all required(*) fields before submitting the review" }
       end
     else
-      Rails.logger.error(@review.errors.full_messages)  # Log the error messages
-      respond_to do |format|
-        format.js { render js: "alert('Failed to submit the review: #{@review.errors.full_messages.join(', ')}')" }
-        format.html { redirect_to gym_path(@gym), alert: "Failed to submit the review." }
+      if @review.save
+        respond_to do |format|
+          format.js  
+          format.html { redirect_to gym_path(@gym), notice: "Review added successfully!" }
+        end
+      else
+        Rails.logger.error(@review.errors.full_messages)  # Log the error messages
+        respond_to do |format|
+          format.js { render js: "alert('Failed to submit the review: #{@review.errors.full_messages.join(', ')}')" }
+          format.html { redirect_to gym_path(@gym), alert: "Failed to submit the review" }
+        end
       end
     end
   end
+  
+  
   
 
   # Render the edit form

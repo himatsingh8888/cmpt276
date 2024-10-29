@@ -289,3 +289,11 @@ textarea {
 .back-button:hover {
     background: var(--blue-d-1);
 }
+
+.required {
+    color: red;
+    margin-right: 5px; /* Space between asterisk and label text */
+    font-weight: bold;
+      font-size: 20px; /* Adjusts size to make it slightly bigger */
+  }
+  

@@ -74,10 +74,10 @@
       </div>
 
       <h3 class="leaveReviewSign">Leave a Review</h3>
-      
+
       <!-- Review form -->
       <%= form_with(model: [ @gym, @gym.reviews.new ], remote: true) do |form| %>
-        <p>Machines & Equipment:</p>
+        <p><span class="required">*</span> Machines & Equipment:</p>
         <div class="rating">
           <%= form.hidden_field :rating, id: "machines_rating" %>  
           <i class='bx bx-star starMachines'></i>
@@ -87,7 +87,7 @@
           <i class='bx bx-star starMachines'></i>
         </div>
         
-        <p>Staff:</p>
+        <p><span class="required">*</span> Staff:</p>
         <div class="rating">
           <%= form.hidden_field :staff_rating, id: "staff_rating" %>
           <i class='bx bx-star starStaff'></i>
@@ -97,7 +97,7 @@
           <i class='bx bx-star starStaff'></i>
         </div>
 
-        <p>Location:</p>
+        <p><span class="required">*</span> Location:</p>
         <div class="rating">
           <%= form.hidden_field :location_rating, id: "location_rating" %>
           <i class='bx bx-star starLocation'></i>
@@ -107,7 +107,7 @@
           <i class='bx bx-star starLocation'></i>
         </div>
 
-        <p>Cleanliness:</p>
+        <p><span class="required">*</span> Cleanliness:</p>
         <div class="rating">
           <%= form.hidden_field :clean_rating, id: "clean_rating" %>
           <i class='bx bx-star starClean'></i>
@@ -117,7 +117,7 @@
           <i class='bx bx-star starClean'></i>
         </div>
 
-        <p>Gym Atmosphere:</p>
+        <p><span class="required">*</span> Gym Atmosphere:</p>
         <div class="rating">
           <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating" %>
           <i class='bx bx-star starAsphere'></i>
@@ -127,6 +127,7 @@
           <i class='bx bx-star starAsphere'></i>
         </div>
 
+        <p><span class="required">*</span> Written Review:</p>
         <div class="form-group">
           <%= form.text_area :comment, placeholder: "Your review..." %>
         </div>
@@ -135,6 +136,7 @@
           <%= form.submit "Submit", class: "btn btn-submit" %>
         </div>
       <% end %>
+
 
       <!-- Display existing reviews -->
       <h3 class="leaveReviewSign">Reviews:</h3>
