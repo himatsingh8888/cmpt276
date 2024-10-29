@@ -10,33 +10,45 @@
 
 ---
 
-### Retrospective
+Retrospective for Iteration 2
 
-What went wrong:
-**Inconsistency in description and pictures of the gym**: While interlinking the gyms during the creation of the pages, it came to notice that the gyms' links opened at different and wrong descriptions and images altogether for each uniquely important gym page. For example, when "She's Fit" is clicked, it would result in a "Club 16" description and vice-versa.
+What Went Wrong:
 
-- **How we solved it**: The database identifier for the gym was not aligned correctly with the images and the descriptions of the gyms inside the view files. This was fixed by mapping each identifier of the gym in the `seeds.rb` file and in the `index.html.erb` file correctly, running migrations again, and seeding again. This ended up fixing the mismatch of gyms and their respective data. We also had to redo this part as we had to assign each gym an id and put it in the database. Moreover, even though it was fixed for one member, when another member would run the application, these problems would still be there. Later we realized this was due to changes being stored locally and the database already had saved info which had to be erased in order for the changes for the database to appear.
+Incomplete Feature Development:
 
-**Database Migration Errors**: In development, we've encountered migration conflicts. It was trying to add such schema into the reviews table columns like location_rating and staff_rating. It resulted in an error whereby Rails refused to run the migration because there were duplicate columns.
+We were unable to implement the filtering through reviews feature, which would have allowed users to sort reviews based on various criteria. Additionally, the likes and dislikes feature was not developed. This hindered our ability to enhance user interaction and engagement with the reviews.
+Review Creation Challenges:
 
-- **How we fixed it**: We examined the migration files to see what columns had already been created so we wouldn't create them again. We used this data to remove added columns that were duplicated in the migration file. After updating the schema, we successfully solved the migration error and ran the migrations.
+We faced difficulties in creating a review due to popup error handling. Users encountered messages that were not user-friendly, which affected their ability to submit reviews successfully. We identified these errors and created custom handling to provide clearer feedback to users.
+Error Handling and User Experience:
 
-**Rails server errors and migration failures**: This was one of the biggest errors we had encountered as it prevented us from viewing our application when we pulled filed from github. Basically when we would run rails server, a big red error would be displayed regarding pending migrations -**ActiveRecord::PendingMigrationError**, indicating that migrations had not been applied to the database.
+The initial error messages were vague and not presentable, leading to confusion among users. We recognized the need for better user experience and updated the error handling messages to be more informative and visually appealing.
+Back Button Issues:
 
-- **How we fixed it**: At first we couldn't understand the error. Then we learnt what it meant and where it occurred from. We fixed this by running `rails db:migrate`, which applied all the pending migrations so our schema was updated. Since there were some other errors, like migration conflicts (such as duplicate columns), we made manual changes to the migration files and ran migrations again. This took quite some time as we didn't know what to do or didn't expect this.
+The back button functionality did not work as intended. After troubleshooting, we discovered that the problem stemmed from incorrect redirection paths. This issue required additional attention to ensure that users could navigate back to previous pages seamlessly.
+How We Solved It:
 
-**Setup Inconsistencies**: We encountered inconsistencies in the local setup when running the app, such as issues with data displaying on the gym detail page or reviews being visible/invisible. This was due to differences in how our local databases were set up and seeded.
+To address the review creation challenges, we refined the error messages, ensuring they were more descriptive and aligned with user expectations. This change improved the overall user experience when submitting reviews.
 
-- **How we fixed it**: We standardized our approach by having everyone run the command `rails db:reset` and seeding the database using one common `seeds.rb` file, ensuring that all local environments had consistent data. We also improved team coordination around migrations and database changes.
+For the back button issue, we reviewed the redirection paths in our application. Once we corrected these paths, users could navigate back without any problems, enhancing the fluidity of their experience on the platform.
 
-**Reviews Display Issues**: Reviews were not showing up on the individual pages of gyms. Reviews couldn’t be saved or fetched properly from the database, so they couldn’t be displayed on the front end.
+Things to Improve:
 
-- **How we fixed it**:
-- we had an error before whih didnt allow us to display the reviews and we had to toruble shoot why. We had to make a database for each of the caterogies as before it didnt show the results for it. This allowed us to display the result. Another issue wehich we countered was that the program would crash whenvee the user tried to submit when some of the fielfs wre left empty. This caused the program to shut down and we then reazlied it was due to the paramters of not being right
+Feature Completion:
 
-**Error with Cached Files**: When we would launch the Rails server, we had errors due to file permission issues, which led to a caching-related error (`Errno::EACCES`) that prevented the application from running. We found out that the root cause is the permission settings for cached assets.
+Prioritize the development of the filtering feature for reviews and the likes/dislikes feature in future iterations. These additions are critical for enhancing user engagement and feedback mechanisms.
+Enhanced User Feedback:
 
-- **How we solved it**: We ran the command `rails tmp:clear` to clear the Rails cache, which removed the temporary cache files. We also made sure that the `tmp` folder had the correct write permissions for the server to function properly.
+Continue to refine error handling and user feedback mechanisms to ensure they are clear, concise, and visually engaging. This will help reduce confusion and improve user satisfaction.
+Comprehensive Testing:
+
+Implement a more robust testing strategy to catch issues related to redirection and feature functionality earlier in the development process.
+Improved Collaboration:
+
+Foster better communication within the team regarding feature responsibilities and timelines to ensure all features are developed as planned.
+Documentation and Tracking:
+
+Utilize GitHub Issues more effectively for feature tracking and documentation of ongoing tasks, which will help keep the team aligned and accountable.
 
 #### Things to be improved:
 
