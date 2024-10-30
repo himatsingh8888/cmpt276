@@ -289,3 +289,29 @@ textarea {
 .back-button:hover {
     background: var(--blue-d-1);
 }
+
+.submit-button {
+    font-size: 18px;               /* Increases font size */
+    padding: 12px 24px;            /* Adds padding for a larger clickable area */
+    background-color: #4CAF50;     /* Sets a green background color */
+    color: white;                  /* Sets the text color to white */
+    border: none;                  /* Removes the default border */
+    border-radius: 8px;            /* Adds rounded corners */
+    cursor: pointer;               /* Changes cursor to pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for a more interactive button */
+  .submit-button:hover {
+    background-color: #45a049;     /* Slightly darker shade of green */
+    transform: scale(1.05);        /* Enlarges the button slightly */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+  }
+  
+  /* Optional: Focus style for better accessibility */
+  .submit-button:focus {
+    outline: 2px solid #4CAF50;    /* Outline for focus state */
+    outline-offset: 2px;           /* Adds space between outline and button */
+  }
+  

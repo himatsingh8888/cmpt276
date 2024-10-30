@@ -8,6 +8,11 @@ class ReviewsController < ApplicationController
     @reviews = @gym.reviews.order(created_at: :desc)  # Fetch all reviews for the gym
   end
 
+  # Render the new review form
+  def new
+    @review = @gym.reviews.new  # Prepare a new review instance associated with the gym
+  end
+  
   # Handle review submission
   def create
     @review = @gym.reviews.new(review_params)

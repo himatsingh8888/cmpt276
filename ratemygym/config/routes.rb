@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Gym routes with nested reviews for viewing, creating, editing, and deleting reviews
   resources :gyms, only: [:show] do
-    resources :reviews, only: [:index, :create, :edit, :update, :destroy] # Include all necessary actions
+    resources :reviews, only: [:index, :new, :create, :edit, :update, :destroy] # Include all necessary actions
   end
   
   # Home route (can be changed as needed)

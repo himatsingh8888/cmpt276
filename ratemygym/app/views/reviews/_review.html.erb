@@ -1,0 +1,7 @@
+<div class="review-item">
+  <p><strong><%= review.user.username %></strong></p>
+  <p>Rating: <%= review.rating %>/5</p>
+  <p><%= review.comment %></p>
+  <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
+</div>
+<hr>
