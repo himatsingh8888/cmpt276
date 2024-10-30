@@ -2,15 +2,17 @@
 
 ## RateMyGym is a web application where users can provide ratings and comments about local gyms regarding many factors such as price, availability of equipment, location, and general environment. RatingMyGym has been built in collaboration with Ruby on Rails but following Object-Oriented guidelines of the MVC architecture. The minimum increased features for security of a login system are implemented, along with a future User Profile page where users will be able to update their account information and update their activity. When the user chooses a gym and leaves a review, the system will add this new review to the creation of the general rating of the gym and the breakdown of reviews for certain ones, since the users can visualize aggregated ratings for factors such as machines, staff, cleanliness, atmosphere, etc. The frontend provides an intuitive interface done via HTML, CSS, and JavaScript; the backend manages user authentication, data storage, and the dynamic showing of information and reviews regarding the gym in a very efficient way. PostgreSQL is used for database management, and best practices were followed in development, including feature tracking and version control through GitHub.
 
-### Feature Tracking
-
-![image](https://github.com/user-attachments/assets/c356d122-22f1-4102-8d6d-b14da9398f6e)
-
-![image](https://github.com/user-attachments/assets/3506cc0a-3624-43aa-8092-79d46f296139)
 
 ---
 
 ### Retrospective for Iteration 2
+
+### Feature Tracking
+
+![Screenshot 2024-10-30 164511](https://github.com/user-attachments/assets/02a23b8e-736c-4e6b-a103-a1ea4306ed7c)
+
+![Screenshot 2024-10-30 164542](https://github.com/user-attachments/assets/c7a355d9-1d14-498c-ae07-4bf7f9fa7ebb)
+
 
 ### What Went Wrong:
 
@@ -74,11 +76,11 @@
 
 ### Testing and Code Quality
 
-Test cases and results:
+**Test cases and results:**
 
 We have implemented automated testing using Rails' built-in test framework to ensure that key functionality in the application works as expected. Below are the details of our testing process for the login functionality and how it passes.
 
-Test Scenario: User Login
+**Test Scenario: User Login**
 Test File: test/controllers/sessions_controller_test.rb
 Description: This test verifies the login functionality of the application, ensuring that:
 Users can log in with valid credentials.
@@ -103,10 +105,10 @@ Finished in 1.358292s, 2.2087 runs/s, 5.8897 assertions/s.
 Conclusion:
 The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the login, logout, and invalid login functionalities work as expected
 
-Review Functionality Testing:
+**Review Functionality Testing:**
 We have implemented automated testing using Rails' built-in test framework to ensure that key functionality in the application works as expected. Below are the details of our testing process for the review functionality and how it passes.
 
-Test Scenario: Review Submission
+**Test Scenario: Review Submission**
 Test File: test/controllers/reviews_controller_test.rb
 Description: This test verifies the review submission functionality of the application, ensuring that:
 
@@ -117,7 +119,7 @@ Expected Results:
 A logged-in user should be able to submit a review successfully, and the review should be added to the gym's page.
 A user who is not logged in should be redirected to the login page when attempting to submit a review.
 
-Actual Results:
+**Actual Results:**
 Running 2 tests in a single process (parallelization threshold is 50)
 Run options: --seed 17188
 
@@ -129,7 +131,7 @@ Finished in 1.370940s, 1.4589 runs/s, 4.3766 assertions/s.
 2 runs, 6 assertions, 0 failures, 0 errors, 0 skips
 
 Conclusion:
-The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the review submission functionality works as expected, allowing users to add reviews when logged in and restricting access when not logged in..
+The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the review submission functionality works as expected, allowing users to add reviews when logged in and restricting access when not logged in.
 
 
 ### Instructions for running:
@@ -148,6 +150,12 @@ The tests passed successfully, as indicated by 0 failures and 0 errors, confirmi
 
 ---
 ### Retrospective For Iteration 1:
+
+### Feature Tracking
+
+![image](https://github.com/user-attachments/assets/c356d122-22f1-4102-8d6d-b14da9398f6e)
+
+![image](https://github.com/user-attachments/assets/3506cc0a-3624-43aa-8092-79d46f296139)
 
 What went wrong:
 **Inconsistency in description and pictures of the gym**: While interlinking the gyms during the creation of the pages, it came to notice that the gyms' links opened at different and wrong descriptions and images altogether for each uniquely important gym page. For example, when "She's Fit" is clicked, it would result in a "Club 16" description and vice-versa.
