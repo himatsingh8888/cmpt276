@@ -30211,3 +30211,333 @@ Processing by GymsController#show as HTML
 Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 1.3ms (9 queries, 1 cached) | GC: 0.5ms)
 
 
+Started GET "/" for ::1 at 2024-10-29 17:40:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1724.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1864.7ms | GC: 0.0ms)
+Completed 200 OK in 1886ms (Views: 1878.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2024-10-29 17:40:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/login" for ::1 at 2024-10-29 17:40:11 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"gurtaj23", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gurtaj23"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://[::1]:3000/home/index
+Completed 302 Found in 602ms (ActiveRecord: 65.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2024-10-29 17:40:11 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 33.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | GC: 0.0ms)
+Completed 200 OK in 54ms (Views: 46.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for ::1 at 2024-10-29 17:40:13 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (5.0ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (5.7ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 114.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 127.1ms | GC: 0.0ms)
+Completed 200 OK in 259ms (Views: 132.8ms | ActiveRecord: 25.1ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for ::1 at 2024-10-29 17:40:42 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 32.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | GC: 0.0ms)
+Completed 200 OK in 90ms (Views: 40.6ms | ActiveRecord: 15.9ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for ::1 at 2024-10-29 17:41:01 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 35.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | GC: 0.0ms)
+Completed 200 OK in 97ms (Views: 48.1ms | ActiveRecord: 16.4ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for ::1 at 2024-10-29 17:41:16 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (3.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 53.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 70.9ms | GC: 0.0ms)
+Completed 200 OK in 128ms (Views: 71.9ms | ActiveRecord: 17.8ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for ::1 at 2024-10-29 17:41:39 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 40.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | GC: 0.2ms)
+Completed 200 OK in 98ms (Views: 52.5ms | ActiveRecord: 15.1ms (9 queries, 1 cached) | GC: 0.2ms)
+
+
+Started GET "/gyms/2" for ::1 at 2024-10-29 17:41:46 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (1.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:146
+  Rendered gyms/show.html.erb within layouts/application (Duration: 33.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.9ms | GC: 0.0ms)
+Completed 200 OK in 79ms (Views: 49.0ms | ActiveRecord: 6.9ms (11 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for ::1 at 2024-10-29 17:42:05 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (2.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  Rendered gyms/show.html.erb within layouts/application (Duration: 59.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | GC: 0.2ms)
+Completed 200 OK in 131ms (Views: 76.9ms | ActiveRecord: 17.1ms (11 queries, 3 cached) | GC: 0.2ms)
+
+
+Started GET "/gyms/2" for ::1 at 2024-10-29 17:42:20 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.8ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  Rendered gyms/show.html.erb within layouts/application (Duration: 42.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 51.0ms | GC: 0.0ms)
+Completed 200 OK in 105ms (Views: 59.3ms | ActiveRecord: 15.5ms (11 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for ::1 at 2024-10-29 17:42:27 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 27.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | GC: 0.0ms)
+Completed 200 OK in 78ms (Views: 42.2ms | ActiveRecord: 6.2ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for ::1 at 2024-10-29 17:42:33 -0700
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.7ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:7:in `show'
+  [1m[36mReview Average (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:143
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:145
+  Rendered gyms/show.html.erb within layouts/application (Duration: 45.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.0ms | GC: 0.0ms)
+Completed 200 OK in 98ms (Views: 65.9ms | ActiveRecord: 5.0ms (11 queries, 3 cached) | GC: 0.0ms)
+
+

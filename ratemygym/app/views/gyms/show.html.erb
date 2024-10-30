@@ -142,7 +142,6 @@
       <h3 class="leaveReviewSign">Reviews:</h3>
 <% @reviews.each do |review| %>
   <div class="review-item">
-    <br>
     <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
     <br>
     <p><strong>Machines Rating:</strong> <%= '★' * (review.rating || 0) + '☆' * (5 - (review.rating || 0)) %></p>
@@ -154,12 +153,18 @@
     <br>
     <p><strong>Comment:</strong> <%= review.comment %></p>
     <br>
+    <br>
     <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
+    <br>
     
     <% if review.user_id == current_user.id %>
       <%= link_to 'Edit', edit_gym_review_path(@gym, review), class: "btn btn-edit" %>
       <%= link_to 'Delete', gym_review_path(@gym, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-delete" %>
     <% end %>
+    <br>
+    <br>
+    <br>
+    <br>
     
     <hr>
   </div>
