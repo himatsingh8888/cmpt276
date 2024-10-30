@@ -16,7 +16,9 @@ What Went Wrong:
 
 Incomplete Feature Development:
 
-We were unable to implement the filtering through reviews feature, which would have allowed users to sort reviews based on various criteria. Additionally, the likes and dislikes feature was not developed. This hindered our ability to enhance user interaction and engagement with the reviews.
+1) We were unable to implement the filtering through reviews feature, which would have allowed users to sort reviews based on various criteria. Additionally, the likes and dislikes feature was not developed. This hindered our ability to enhance user interaction and engagement with the reviews. 
+
+2) We were unable to complete the process of placing the 'writing the review section', which is on the review page, on a separate button so that the page's layout looks cleaner. 
 
 Review Creation Challenges:
 
@@ -24,11 +26,11 @@ We faced difficulties in creating a review due to popup error handling. Users en
 
 Error Handling and User Experience:
 
-The initial error messages were vague and not presentable, leading to confusion among users. We recognized the need for better user experience and updated the error handling messages to be more informative and visually appealing.
+The initial error messages were vague and not presentable, leading to confusion among users. We recognized the need for a better user experience and updated the error handling messages to be more informative and visually appealing.
 
 Back Button Issues:
 
-The back button functionality did not work as intended. After troubleshooting, we discovered that the problem stemmed from incorrect redirection paths. This issue required additional attention to ensure that users could navigate back to previous pages seamlessly.
+The back button functionality did not work as intended. After troubleshooting, we discovered that the problem stemmed from incorrect redirection paths. This issue required additional attention to ensure users could seamlessly navigate to previous pages.
 
 How We Solved It:
 
@@ -37,6 +39,7 @@ To address the review creation challenges, we refined the error messages, ensuri
 For the back button issue, we reviewed the redirection paths in our application. Once we corrected these paths, users could navigate back without any problems, enhancing the fluidity of their experience on the platform.
 
 Things to Improve:
+
 
 Feature Completion:
 
