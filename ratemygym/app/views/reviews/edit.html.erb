@@ -21,14 +21,7 @@
       <h1>Edit Review for <%= @gym.name %></h1>
     </header>
 
-    <h3 class="leaveReviewSign">Edit Your Review</h3>
-
-    <!-- Gym Description -->
-    <div class="form-group">
-      <%= form.label :description, "Gym Description" %>
-      <%= form.text_area :description, placeholder: "Add a description for the gym...", value: @gym.description %>
-    </div>
-
+  
     <!-- Review edit form -->
     <%= form_with(model: [@gym, @review], local: true) do |form| %>
       <p>Machines & Equipment:</p>
