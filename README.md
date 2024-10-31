@@ -295,3 +295,61 @@ Conclusion:
 The tests passed successfully, as indicated by 0 failures and 0 errors, confirming that the review submission functionality works as expected, allowing users to add reviews when logged in and restricting access when not logged in.
 
 
+Iteration 2 Testing:
+
+**Objective:** Verify that a user can successfully edit a review.
+
+1. **Initial State (Before Editing):**
+   - **Action:** Navigate to the gym's page where the review is listed.
+   - **Expected Outcome:** The review displays the original comment.
+   - **Screenshot:**
+<img width="854" alt="Screenshot 2024-10-30 at 11 36 30 PM" src="https://github.com/user-attachments/assets/849a3c7c-0812-470e-9031-bced6fffd482">
+
+2. **Action Taken:**
+   - **Steps:**
+     - Click on the "Edit Review" button.
+     - Modify the review comment to "Updated review comment."
+     - Click the "Update Review" button.
+
+3. **Final State (After Editing):**
+   - **Expected Outcome:** The review should now display the updated comment.
+   - **Screenshot:**
+  
+   <img width="689" alt="Screenshot 2024-10-30 at 11 37 16 PM" src="https://github.com/user-attachments/assets/a90846a4-acc4-445e-a384-0925c9571a1b">
+
+### Test Case 2: Deleting a Review
+
+**Objective:** Verify that a user can successfully delete a review.
+
+1. **Initial State (Before Deleting):**
+   - **Action:** Navigate to the gym's page where the review is listed.
+   - **Expected Outcome:** The review is displayed with a "Delete Review" button.
+   - **Screenshot:**
+  
+    <img width="762" alt="Screenshot 2024-10-30 at 11 40 33 PM" src="https://github.com/user-attachments/assets/e6aac09d-cbec-4677-a95c-1866717aba41">
+
+    2. **Action Taken:**
+   - **Steps:**
+     - Click on the "Delete Review" button.
+     - Confirm the deletion when prompted.
+
+3. **Final State (After Deleting):**
+   - **Expected Outcome:** The review should no longer be displayed on the gym's page.
+   - **Screenshot:**
+  
+     <img width="732" alt="Screenshot 2024-10-30 at 11 41 00 PM" src="https://github.com/user-attachments/assets/292094f9-b802-449f-95e5-cb5184b4607d">
+
+
+  - After user hits delete, the review is removed from the database and does not display anymore
+
+
+## Summary of Findings
+
+- The edit functionality works as expected, allowing users to update their reviews.
+- The delete functionality successfully removes the review from the display.
+- All screenshots have been included to visually demonstrate the changes before and after actions were taken.
+
+
+
+
+
