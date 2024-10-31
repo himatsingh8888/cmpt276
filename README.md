@@ -6,6 +6,45 @@
 ---
 
 ### Retrospective for Iteration 2
+### Top-level directory layout
+# RateMyGym Project
+
+RateMyGym is a web application that allows users to review and rate gyms based on different aspects like equipment quality, staff, and cleanliness.
+
+## Project Directory Layout
+**Here is the structure of our project**
+This structure/framework was downloaded through the Rails tutorial. Its a self built strcuture. 
+
+- **/app**: main application code.
+  - **/assets**: holds static files like images, JavaScript, and CSS.
+    - **/config**: This stores configuration files. 
+    - **/images**: Contains images for gym logos. 
+    - **/stylesheets**: contains CSS files for styling the app.
+  - **/channels**: Used for real-time features.
+  - **/controllers**: this folder, contains files which takes in user requests, like opening a page, and then directs them into the right place
+  - **/helpers**:  assist with view logic/small parts of code makes it easier to display things in views
+  - **/jobs**: for background tasks that run on their own, like sending emails. 
+  - **/mailers**: for potentially sending email to users
+  - **/models**: Defines the app’s data, like gyms, users, and reviews. Think of it as the “structure” for your data.
+  - **/views**: Contains HTML files that display content to users. this is what users actually see when they load a page.
+    - **/entries**: This folder likely contains HTML templates related to a specific feature in your app (maybe gym entries or listings).
+    - **/layouts**: "wrappers" for your pages. It holds the overall structure of the page like the header, footer, and the specific page content is placed inside. 
+    - **/pwa**: folder contains files related to making an app, (progressive web app). it can contain files that tells browsers how to display the app on mobile devices. 
+- **/bin**: contains executable scripts that help you run, manage, and maintain the application. It holds command line scripts torun in terminal to perform various tasks, like starting rails server, running database migrattions. 
+- **/config**: Contains all the settings for the app, like how it connects to the database and routes.
+  - **/environments**: Separate settings for development (when you’re building it), production (when it’s live), and test environments.
+  - **/initializers**: Setup files for extra features or tools.
+  - **/locales**: Files for translations if the app supports multiple languages
+
+- **/db**: Stores the database information.
+    - **/migrate**:Files that tell the database how to structure data (like adding tables).
+   
+- **/log**: Where the app saves records of what’s happening (errors, actions, etc.). This helps with debugging.
+- **/public**: Files that users can access directly, like images or error pages.
+- **/storage**: SWhere uploaded files are saved (like user-uploaded images).
+- **/test**: Contains tests to make sure the code works correctly.
+- **/tmp**: Temporary files created while the app is running (not important to edit).
+- **/vendor**: Holds any third-party libraries or tools the app depends on.
 
 ### Feature Tracking
 
