@@ -350,6 +350,36 @@ Iteration 2 Testing:
 - All screenshots have been included to visually demonstrate the changes before and after actions were taken.
 
 
+### Test Case 3: Validation of Required Fields
+
+**Objective:** Verify that the system displays an error message when a user attempts to submit a review without filling in all required star ratings.
+
+1. **Initial State (Before Submission):**
+   - **Action:** Navigate to the "Leave a Review" page for a specific gym.
+   - **Expected Outcome:** The review form is displayed with fields for star ratings and a comment.
+   - **Screenshot:**
+
+<img width="1041" alt="Screenshot 2024-10-30 at 11 45 00 PM" src="https://github.com/user-attachments/assets/711987fb-cdfc-471e-b428-48a5ac29a55e">
+
+2. **Action Taken:**
+   - **Steps:**
+     - Leave the star ratings (machines, staff, location, cleanliness, atmosphere) empty.
+     - Fill in the comment section with a text (e.g., "Great gym!").
+     - Click the "Submit Review" button.
+
+    
+3. **Final State (After Submission Attempt):**
+   - **Expected Outcome:** An error message should appear indicating that all star ratings are required.
+   - **Screenshot:**
+
+ <img width="1059" alt="Screenshot 2024-10-30 at 11 45 16 PM" src="https://github.com/user-attachments/assets/ed27c27c-c197-412a-a54a-78c75e506609">
+ 
+ ### Summary of Findings
+
+- The system correctly identifies that required fields were not filled and displays an appropriate error message.
+- Users are prompted to complete all required fields before successfully submitting their review.
+
+     
 
 
 
