@@ -9,5 +9,8 @@ class GymsController < ApplicationController
      @average_location_rating = @reviews.average(:location_rating).to_f.round(1)
      @average_cleanliness_rating = @reviews.average(:clean_rating).to_f.round(1)
      @average_atmosphere_rating = @reviews.average(:atmosphere_rating).to_f.round(1)
+
+     @gym_name = params[:name] # assuming you're passing the name in params
+     @gym_locations = Gym.where(name: @gym_name).select(:latitude, :longitude)
   end
 end

@@ -46,7 +46,7 @@ body {
 
 /* Text under the writing to add some space to the website */
 .text {
-    margin-bottom: 400px; /* Adds 20px space below the text */
+    margin-bottom: 200px; /* Adds 20px space below the text */
 }
 
 /* This is for the large image represening the company logo */
@@ -66,6 +66,25 @@ body {
     font-size: 3rem; /* Adjust the value to your preference */
 }
 
+
+* {
+    padding: 0;
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+  }
+  #google-map {
+    border: 1px solid black;
+    width: 700px;
+    height: 500px;
+    align-self: center;
+    margin: 0 auto;
+  }
+  
 
 /* Section for the average reviews such as the title and the titles for each */
 /* This is the css for the overall section of average reviews */

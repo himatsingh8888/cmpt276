@@ -35,3 +35,9 @@ Gym.create(
   description: "Brand new equipment and machines", 
   image_url: "goldsgymimage.jpg"
 )
+
+
+Gym.create([
+  { name: "GoodLife Fitness", latitude: 49.3371712, longitude: -123.4515419, }
+])
+

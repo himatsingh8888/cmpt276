@@ -140,6 +140,31 @@ function generateStars(rating) {
 }
 
 
+function initMap(gymLocations, centerCoordinates) {
+    // Set the default center of the map
+    const centerMap = centerCoordinates || { lat: 49.1360068, lng: -122.810799 };
+
+    const mapOptions = {
+        center: centerMap,
+        zoom: 10,
+    };
+    
+    const map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+
+    // Add markers for each gym location
+    gymLocations.forEach(location => {
+        new google.maps.Marker({
+            position: { lat: location.latitude, lng: location.longitude },
+            map: map,
+            title: location.name // Optional: display the gym's name on hover
+        });
+    });
+}
+
+
+
+
+
 // document.querySelector('.btn-submit').addEventListener('click', function(e) {
 //     // Prevent form reload
 //     //e.preventDefault();  

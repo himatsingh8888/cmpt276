@@ -8,6 +8,8 @@
   <!-- Include the new CSS for reviews -->
   <%= stylesheet_link_tag 'gymReviews', media: 'all', 'data-turbolinks-track': 'reload' %>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
 </head>
 <body>
   <button class="back-button" onclick="window.location.href = '<%= home_index_path %>';"> 
@@ -20,6 +22,10 @@
       <h1>Gym Reviews for <%= @gym.name %></h1>
       <p class="text"><%= @gym.description %></p>
     </header>
+
+    <!-- Google Maps -->
+    <div id="google-map">
+    </div>
     
     <div class="averages-section">
       <h2 class="averageReviews">Average Reviews</h2>
@@ -170,6 +176,7 @@
   </div>
 <% end %>
 
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_hSlNM3KFYd5iFjua5Iqh7KVpfhSaYAc&callback=initMap"></script>
       <!-- Include the new JavaScript for interactivity -->
       <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
     </div>
