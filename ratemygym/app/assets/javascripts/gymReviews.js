@@ -140,26 +140,70 @@ function generateStars(rating) {
 }
 
 
-function initMap(gymLocations, centerCoordinates) {
+function initMap() {
+    const markers = [
+        {
+            locationName: 'Goodlife Fitness',
+            lat: 49.264408,
+            lng: -123.131317,
+            address: '1401 W 8th Ave, Vancouver, BC V6H 1C9',
+        },
+        {
+            locationName: 'Goodlife Fitness Burnaby',
+            lat: 49.252100,
+            lng: -122.893350,
+            address: '3433 North Rd, Burnaby, BC V3J 0A9',
+        },
+
+        {
+            locationName: 'Goodlife Fitness Surrey',
+            lat: 49.140820,
+            lng: -122.862550,
+            address: '12992 76 Ave, Surrey, BC V3W 2V6',
+        },
+
+        {
+            locationName: 'Goodlife Fitness',
+            lat: 49.2303628,
+            lng: -123.0040853,
+            address: '4501 Kingsway, Burnaby, BC V5H 0E5',
+        },
+
+        {
+            locationName: 'Goodlife Fitness',
+            lat: 49.0503966,
+            lng: -122.326023,
+            address: '32500 South Fraser Way, Abbotsford, BC V2T 4W1',
+        },
+        
+        {
+            locationName: 'Goodlife Fitness',
+            lat: 49.130900,
+            lng: -122.319580,
+            address: '32555 London Ave, Mission 1, BC V2V 6M7',
+        },
+    ];
+
     // Set the default center of the map
-    const centerMap = centerCoordinates || { lat: 49.1360068, lng: -122.810799 };
+    const centerMap = { lat: 49.1722862, lng: -122.7331446 };
 
     const mapOptions = {
         center: centerMap,
         zoom: 10,
+   
     };
     
     const map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
 
-    // Add markers for each gym location
-    gymLocations.forEach(location => {
-        new google.maps.Marker({
-            position: { lat: location.latitude, lng: location.longitude },
-            map: map,
-            title: location.name // Optional: display the gym's name on hover
+    // Loop through markers array to place each marker on the map
+    markers.forEach(markerData => {
+        const marker = new google.maps.Marker({
+            position: { lat: markerData.lat, lng: markerData.lng },
+            map: map
         });
     });
 }
+
 
 
 
