@@ -175,9 +175,9 @@
     <hr>
   </div>
 <% end %>
-
-      <script defer src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"></script>
-
+      <div id="map-data" data-gym-name="<%= @gym.name %>"></div>
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIlNDZ5bOjwMOWdlanSp7mYE-ohfPQ9UI&callback=initMap"></script>
+      
       <!-- Include the new JavaScript for interactivity -->
       <%= javascript_include_tag 'gymReviews', 'data-turbo-track': 'reload' %>
     </div>
