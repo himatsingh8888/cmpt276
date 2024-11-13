@@ -79,71 +79,81 @@
         <br>
       </div>
 
-      <h3 class="leaveReviewSign">Leave a Review</h3>
+      <%= javascript_include_tag 'review_modal', 'data-turbolinks-track': 'reload' %>
 
+      <button id="writeReviewButton" class="write-review-button">Leave a Review</button>
+
+      
       <!-- Review form -->
-      <%= form_with(model: [ @gym, @gym.reviews.new ], remote: true) do |form| %>
-        <p><span class="required">*</span> Machines & Equipment:</p>
-        <div class="rating">
-          <%= form.hidden_field :rating, id: "machines_rating" %>  
-          <i class='bx bx-star starMachines'></i>
-          <i class='bx bx-star starMachines'></i>
-          <i class='bx bx-star starMachines'></i>
-          <i class='bx bx-star starMachines'></i>
-          <i class='bx bx-star starMachines'></i>
-        </div>
-        
-        <p><span class="required">*</span> Staff:</p>
-        <div class="rating">
-          <%= form.hidden_field :staff_rating, id: "staff_rating" %>
-          <i class='bx bx-star starStaff'></i>
-          <i class='bx bx-star starStaff'></i>
-          <i class='bx bx-star starStaff'></i>
-          <i class='bx bx-star starStaff'></i>
-          <i class='bx bx-star starStaff'></i>
-        </div>
+      <div id="reviewModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>Leave a Review for <%= @gym.name %></h3>
+          <%= form_with(model: [@gym, @gym.reviews.new], remote: true) do |form| %>
 
-        <p><span class="required">*</span> Location:</p>
-        <div class="rating">
-          <%= form.hidden_field :location_rating, id: "location_rating" %>
-          <i class='bx bx-star starLocation'></i>
-          <i class='bx bx-star starLocation'></i>
-          <i class='bx bx-star starLocation'></i>
-          <i class='bx bx-star starLocation'></i>
-          <i class='bx bx-star starLocation'></i>
+            <p><span class="required">*</span> Machines & Equipment:</p>
+            <div class="rating">
+              <%= form.hidden_field :rating, id: "machines_rating" %>  
+              <i class='bx bx-star starMachines'></i>
+              <i class='bx bx-star starMachines'></i>
+              <i class='bx bx-star starMachines'></i>
+              <i class='bx bx-star starMachines'></i>
+              <i class='bx bx-star starMachines'></i>
+            </div>
+
+            <p><span class="required">*</span> Staff:</p>
+            <div class="rating">
+              <%= form.hidden_field :staff_rating, id: "staff_rating" %>
+              <i class='bx bx-star starStaff'></i>
+              <i class='bx bx-star starStaff'></i>
+              <i class='bx bx-star starStaff'></i>
+              <i class='bx bx-star starStaff'></i>
+              <i class='bx bx-star starStaff'></i>
+            </div>
+
+            <p><span class="required">*</span> Location:</p>
+            <div class="rating">
+              <%= form.hidden_field :location_rating, id: "location_rating" %>
+              <i class='bx bx-star starLocation'></i>
+              <i class='bx bx-star starLocation'></i>
+              <i class='bx bx-star starLocation'></i>
+              <i class='bx bx-star starLocation'></i>
+              <i class='bx bx-star starLocation'></i>
+            </div>
+
+            <p><span class="required">*</span> Cleanliness:</p>
+            <div class="rating">
+              <%= form.hidden_field :clean_rating, id: "clean_rating" %>
+              <i class='bx bx-star starClean'></i>
+              <i class='bx bx-star starClean'></i>
+              <i class='bx bx-star starClean'></i>
+              <i class='bx bx-star starClean'></i>
+              <i class='bx bx-star starClean'></i>
+            </div>
+
+            <p><span class="required">*</span> Gym Atmosphere:</p>
+            <div class="rating">
+              <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating" %>
+              <i class='bx bx-star starAsphere'></i>
+              <i class='bx bx-star starAsphere'></i>
+              <i class='bx bx-star starAsphere'></i>
+              <i class='bx bx-star starAsphere'></i>
+              <i class='bx bx-star starAsphere'></i>
+            </div>
+
+            <div class="form-group">
+              <%= form.text_area :comment, placeholder: "Your review..." %>
+            </div>
+
+            <%= form.submit "Submit Review", class: "btn-submit" %>
+
+          <% end %>
         </div>
-
-        <p><span class="required">*</span> Cleanliness:</p>
-        <div class="rating">
-          <%= form.hidden_field :clean_rating, id: "clean_rating" %>
-          <i class='bx bx-star starClean'></i>
-          <i class='bx bx-star starClean'></i>
-          <i class='bx bx-star starClean'></i>
-          <i class='bx bx-star starClean'></i>
-          <i class='bx bx-star starClean'></i>
-        </div>
-
-        <p><span class="required">*</span> Gym Atmosphere:</p>
-        <div class="rating">
-          <%= form.hidden_field :atmosphere_rating, id: "atmosphere_rating" %>
-          <i class='bx bx-star starAsphere'></i>
-          <i class='bx bx-star starAsphere'></i>
-          <i class='bx bx-star starAsphere'></i>
-          <i class='bx bx-star starAsphere'></i>
-          <i class='bx bx-star starAsphere'></i>
-        </div>
-
-        <p><span class="required">*</span> Written Review:</p>
-        <div class="form-group">
-          <%= form.text_area :comment, placeholder: "Your review..." %>
-        </div>
-
-        <div class="button-group">
-          <%= form.submit "Submit", class: "btn btn-submit" %>
-        </div>
-      <% end %>
+      </div>
 
 
+
+      
       <!-- Display existing reviews -->
       <h3 class="leaveReviewSign">Reviews:</h3>
 <% @reviews.each do |review| %>
