@@ -22,46 +22,66 @@ body {
 }
 
 /* Style for the header */
+/* Style for the fixed header */
 .fixed-header {
+  width: 100%;
+  background-color: #082582; /* Dark background color */
+  color: white;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   display: flex;
-  justify-content: space-between; /* This aligns the title and button on opposite sides */
   align-items: center;
-  background-color: #f8f9fa; /* Header background color */
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+  justify-content: space-between;
+  padding: 15px 30px; /* Increase padding for wider look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
   z-index: 1000; /* Ensure it stays on top */
+  height: 70px; /* Increase height for wider look */
+}
+
+/* Style for the logo section with the logo image and title */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image styling */
+.logo-image {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  margin-right: 10px; /* Space between logo and title */
 }
 
 /* Style for the header title */
-.fixed-header h1 {
+.header-title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 24px;
+  color: #efeded; /* Text color for title */
 }
 
 /* Style for the logout button */
 .logout-button {
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #ff5a5a;
+  background-color: #d1a35f;
   color: white;
   border: none;
   border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .logout-button:hover {
-  background-color: #ff3a3a;
+  background-color: #eec689cd;
 }
 
 /* Push content below the fixed header */
 .page-rate-my-gym {
-  padding-top: 70px; /* Ensure the content starts below the fixed header */
+  padding-top: 90px; /* Adjust to match the header height */
 }
+
+
 .notice, .alert {
   position: fixed;
   top: 60px; /* Shift the message lower */

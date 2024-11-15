@@ -7,6 +7,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+
+
+.auth-box h2 {
+  font-size: 2rem; /* Larger font size */
+  margin-top: -10px;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif; /* Custom font */
+  font-weight: 700;
+  color: #082582; /* Blue color */
+}
+
+
+
 .auth-wrapper {
   display: flex;
   justify-content: center;
@@ -19,10 +32,15 @@ body {
   background-color: white;
   padding: 3rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(15, 7, 168, 0.77), 0 0 20px rgba(8, 37, 130, 0.842); /* Add a blue shadow */
   max-width: 400px;
   width: 100%;
   text-align: center;
+}
+
+.form-control::placeholder {
+  color: #082582; /* Set placeholder text color to blue */
+  opacity: 1; /* Ensure the color is fully opaque */
 }
 
 .auth-header {
@@ -51,7 +69,7 @@ body {
 .form-control {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid #082582;
   border-radius: 4px;
   font-size: 1rem;
   background-color: #f5f5f5;
@@ -60,12 +78,19 @@ body {
 .form-control:focus {
   border-color: #3278ff;
   outline: none;
+
+}
+
+.form-group label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Normal weight for readability */
+  color: #082582; /* Optional: Set color to blue as per your requirement */
 }
 
 .btn-submit {
   width: 100%;
   padding: 0.8rem;
-  background-color: #3278ff;
+  background-color: #082582;
   color: white;
   border: none;
   border-radius: 4px;
@@ -74,7 +99,7 @@ body {
 }
 
 .btn-submit:hover {
-  background-color: #2861c2;
+  background-color: #07268894;
 }
 
 .auth-footer {
@@ -82,7 +107,7 @@ body {
 }
 
 .auth-footer a {
-  color: #3278ff;
+  color: #d1a35f;
   text-decoration: none;
 }
 

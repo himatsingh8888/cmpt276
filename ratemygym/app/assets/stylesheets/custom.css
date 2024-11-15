@@ -53,14 +53,14 @@ button {
     height: 400px;
     /* places the image scaled up to size*/
     object-fit: cover;
-    border: 2px solid black;
+    border: 3px solid #082582;
     transition: transform 0.4s, border-color 0.3s;
   }
   
   /* Hover effect for images */
   .gym-images a img:hover {
     transform: scale(1.10);
-    border-color: rgb(26, 163, 213);
+    border-color: #d1a35f;
     /* Changes border color on hover */
     border-width: 5px; 
   }

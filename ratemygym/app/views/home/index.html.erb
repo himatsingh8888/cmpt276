@@ -11,7 +11,10 @@
 
   <!-- Fixed Header with Logout button -->
   <header class="fixed-header">
-    <h1>Rate My Gym</h1>
+    <div class="logo-section">
+      <%= image_tag 'logo.png', alt: 'RateMyGym Logo', class: 'logo-image' %>
+      <h1 class="header-title">RateMyGym</h1>
+    </div>
     <% if current_user %>
       <%= link_to "Logout", logout_path, method: :delete, class: "logout-button" %>
     <% end %>
