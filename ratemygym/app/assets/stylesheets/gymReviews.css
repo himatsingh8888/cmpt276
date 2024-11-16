@@ -329,8 +329,8 @@ textarea {
 
 .back-button {
     position: absolute;
-    top: 20px; /* Adjust based on your design */
-    left: 20px; /* Adjust based on your design */
+    top: 90px; /* Adjust based on your design */
+    left: 30px; /* Adjust based on your design */
     padding: 0.8rem 1.2rem;
     background: var(--blue);
     color: var(--white);
