@@ -167,24 +167,26 @@
 
     <!-- Display existing reviews -->
     <h3 class="leaveReviewSign">Reviews:</h3>
-    <% @reviews.each do |review| %>
-    <div class="review-item">
-      <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
-      <p><strong>Machines Rating:</strong> <%= '★' * (review.rating || 0) + '☆' * (5 - (review.rating || 0)) %></p>
-      <p><strong>Staff Rating:</strong> <%= '★' * (review.staff_rating || 0) + '☆' * (5 - (review.staff_rating || 0)) %></p>
-      <p><strong>Location Rating:</strong> <%= '★' * (review.location_rating || 0) + '☆' * (5 - (review.location_rating || 0)) %></p>
-      <p><strong>Cleanliness Rating:</strong> <%= '★' * (review.clean_rating || 0) + '☆' * (5 - (review.clean_rating || 0)) %></p>
-      <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * (review.atmosphere_rating || 0) + '☆' * (5 - (review.atmosphere_rating || 0)) %></p>
-      <p><strong>Comment:</strong> <%= review.comment %></p>
-      <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
+    <div class="review-container">
+        <% @reviews.each do |review| %>
+        <div class="review-item">
+          <p><strong>Reviewed by:</strong> <%= review.user.username %></p>
+          <p><strong>Machines Rating:</strong> <%= '★' * (review.rating || 0) + '☆' * (5 - (review.rating || 0)) %></p>
+          <p><strong>Staff Rating:</strong> <%= '★' * (review.staff_rating || 0) + '☆' * (5 - (review.staff_rating || 0)) %></p>
+          <p><strong>Location Rating:</strong> <%= '★' * (review.location_rating || 0) + '☆' * (5 - (review.location_rating || 0)) %></p>
+          <p><strong>Cleanliness Rating:</strong> <%= '★' * (review.clean_rating || 0) + '☆' * (5 - (review.clean_rating || 0)) %></p>
+          <p><strong>Gym Atmosphere Rating:</strong> <%= '★' * (review.atmosphere_rating || 0) + '☆' * (5 - (review.atmosphere_rating || 0)) %></p>
+          <p><strong>Comment:</strong> <%= review.comment %></p>
+          <p><em>Posted on <%= review.created_at.strftime("%b %d, %Y") %></em></p>
 
-      <% if review.user_id == current_user.id %>
-        <%= link_to 'Edit', edit_gym_review_path(@gym, review), class: "btn btn-edit" %>
-        <%= link_to 'Delete', gym_review_path(@gym, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-delete" %>
-      <% end %>
-      <hr>
-    </div>
-    <% end %>
+          <% if review.user_id == current_user.id %>
+            <%= link_to 'Edit', edit_gym_review_path(@gym, review), class: "btn btn-edit" %>
+            <%= link_to 'Delete', gym_review_path(@gym, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-delete" %>
+          <% end %>
+          <hr>
+        </div>
+        <% end %>
+      </div>
       <script defer src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"></script>
       <div id="map-data" data-gym-name="<%= @gym.name %>"></div>
       <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIlNDZ5bOjwMOWdlanSp7mYE-ohfPQ9UI&callback=initMap"></script>

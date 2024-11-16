@@ -464,3 +464,41 @@ textarea {
   }
   
   
+/* Reviews Section Styling */
+.review-container {
+    background-color: #082582; /* Blue background */
+    color: white; /* White text */
+    padding: 20px; /* Add padding inside each review box */
+    border-radius: 10px; /* Rounded corners for the box */
+    margin: 20px auto; /* Add space between each review and center them */
+    max-width: 800px; /* Limit the width of the review box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a card-like effect */
+    border: 2px solid #ffffff; /* Add a white border for contrast */
+}
+
+/* Review Text Styling */
+.review-container p {
+    margin: 10px 0; /* Add spacing between paragraphs */
+    font-size: 1rem; /* Standardize font size */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Styling for "Edit" and "Delete" Buttons/Links */
+.review-container a {
+    color: var(--yellow); /* Yellow color */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+    margin-right: 15px; /* Add space between the buttons */
+    display: inline-block; /* Ensure buttons are inline */
+}
+
+.review-container a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Adjust "Edit" and "Delete" buttons' placement */
+.review-container .review-actions {
+    margin-top: 10px; /* Add spacing above the buttons */
+    display: flex;
+    gap: 10px; /* Add spacing between Edit and Delete links */
+}
