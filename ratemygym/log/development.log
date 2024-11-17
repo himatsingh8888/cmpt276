@@ -41078,3 +41078,615 @@ Gym: {"id"=>3, "name"=>"Planet Fitness", "location"=>nil, "created_at"=>Tue, 08 
 Completed 200 OK in 37ms (Views: 22.7ms | ActiveRecord: 2.0ms (7 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mGym Load (1.0ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "GoodLife Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:2:in `block in <main>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/initializers/update_gym_descriptions.rb:2:in `block in <main>'
+  [1m[36mGym Update (2.7ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1, "image_url" = $2 WHERE "gyms"."id" = $3[0m  [["updated_at", "2024-11-17 21:21:10.760898"], ["image_url", "goodlifefitnessimage.png"], ["id", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:2:in `block in <main>'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/initializers/update_gym_descriptions.rb:2:in `block in <main>'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Anytime Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:6:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/initializers/update_gym_descriptions.rb:6:in `block in <main>'
+  [1m[36mGym Update (2.2ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1, "image_url" = $2 WHERE "gyms"."id" = $3[0m  [["updated_at", "2024-11-17 21:21:10.770084"], ["image_url", "anytimefitnessimage.jpg"], ["id", 7]]
+  ↳ config/initializers/update_gym_descriptions.rb:6:in `block in <main>'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/initializers/update_gym_descriptions.rb:6:in `block in <main>'
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Planet Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:13:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "She's Fit"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:20:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/initializers/update_gym_descriptions.rb:20:in `block in <main>'
+  [1m[36mGym Update (12.2ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1, "image_url" = $2 WHERE "gyms"."id" = $3[0m  [["updated_at", "2024-11-17 21:21:10.779636"], ["image_url", "shesfitimage.png"], ["id", 15]]
+  ↳ config/initializers/update_gym_descriptions.rb:20:in `block in <main>'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/initializers/update_gym_descriptions.rb:20:in `block in <main>'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Club 16"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:27:in `block in <main>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/initializers/update_gym_descriptions.rb:27:in `block in <main>'
+  [1m[36mGym Update (2.1ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1, "image_url" = $2 WHERE "gyms"."id" = $3[0m  [["updated_at", "2024-11-17 21:21:10.797296"], ["image_url", "club16image.png"], ["id", 10]]
+  ↳ config/initializers/update_gym_descriptions.rb:27:in `block in <main>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/initializers/update_gym_descriptions.rb:27:in `block in <main>'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Gold's Gym"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:34:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/initializers/update_gym_descriptions.rb:34:in `block in <main>'
+  [1m[36mGym Update (2.2ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1, "image_url" = $2 WHERE "gyms"."id" = $3[0m  [["updated_at", "2024-11-17 21:21:10.804268"], ["image_url", "goldsgymimage.jpg"], ["id", 11]]
+  ↳ config/initializers/update_gym_descriptions.rb:34:in `block in <main>'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/initializers/update_gym_descriptions.rb:34:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "GoodLife Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_desctiptions.rb:2:in `block in <main>'
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:21:14 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 849.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 852.5ms | GC: 0.0ms)
+Completed 200 OK in 887ms (Views: 859.1ms | ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/4" for 127.0.0.1 at 2024-11-17 13:21:18 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>4, "name"=>"She's Fit", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.481845000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.810200000 UTC +00:00, "description"=>"Shes Fit is a private womens gym that offers a comfortable, safe environment for women at all stages of their fitness journey. The gym is equipped with over 80 cardio machines, \n  including treadmills and ellipticals, each with private TV screens for a more personalized workout. The facility features designated weight areas, stretching zones, and private locker rooms \n  with individual changing booths and showers. With functional training areas and personal training options available, members can work towards their goals with tailored support. Shes Fit provides a \n  supportive, women-only space that empowers its members to prioritize fitness comfortably and confidently.", "image_url"=>"/assets/images/shesfitimage.png"}
+  [1m[36mReview Average (2.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 4]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 4]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 4]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 4]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 4]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 4]]
+  ↳ app/views/gyms/show.html.erb:179
+  Rendered gyms/show.html.erb within layouts/application (Duration: 33.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | GC: 0.0ms)
+Completed 200 OK in 97ms (Views: 47.9ms | ActiveRecord: 7.0ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/shesfitimage.png"):
+  
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:21:21 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 23.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:21:22 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 31.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | GC: 0.0ms)
+Completed 200 OK in 62ms (Views: 43.3ms | ActiveRecord: 2.6ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:22:47 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.9ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 21.6ms | ActiveRecord: 2.9ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:22:48 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 13.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 19.0ms | ActiveRecord: 2.3ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+  [1m[36mGym Load (0.5ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "GoodLife Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:2:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Anytime Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:6:in `block in <main>'
+  [1m[36mGym Load (0.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Planet Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:12:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "She's Fit"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:19:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Club 16"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:26:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/initializers/update_gym_descriptions.rb:26:in `block in <main>'
+  [1m[36mGym Update (1.8ms)[0m  [1m[33mUPDATE "gyms" SET "updated_at" = $1, "image_url" = $2 WHERE "gyms"."id" = $3[0m  [["updated_at", "2024-11-17 21:22:58.922176"], ["image_url", "club16image.png"], ["id", 5]]
+  ↳ config/initializers/update_gym_descriptions.rb:26:in `block in <main>'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/initializers/update_gym_descriptions.rb:26:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Gold's Gym"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:33:in `block in <main>'
+  [1m[36mGym Load (0.1ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "GoodLife Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_desctiptions.rb:2:in `block in <main>'
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:23:03 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (1.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 88.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 96.0ms | GC: 0.0ms)
+Completed 200 OK in 150ms (Views: 100.6ms | ActiveRecord: 7.1ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:23:06 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 18.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 22.3ms | ActiveRecord: 2.7ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:23:11 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 16.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-11-17 13:23:13 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>1, "name"=>"GoodLife Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.457053000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:21:10.760898000 UTC +00:00, "description"=>"GoodLife Fitness provides a comprehensive fitness experience with certified personal trainers and advanced equipment. Membership rates vary depending on location and membership type, typically starting around $50 to $70 per month. Trainers are continually certified and stay up-to-date with the latest in fitness, ensuring members receive top-tier guidance. Some clubs offer a Women's Only section, adding a private space for women.", "image_url"=>"goodlifefitnessimage.png"}
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  Rendered gyms/show.html.erb within layouts/application (Duration: 19.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 24.2ms | ActiveRecord: 2.2ms (11 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:23:17 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 14.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/3" for 127.0.0.1 at 2024-11-17 13:23:20 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>3, "name"=>"Planet Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.469159000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:10:10.539757000 UTC +00:00, "description"=>"Planet Fitness is known for its affordability, with membership options starting as low as $10 per month for the basic membership and $22.99 per month for the Black Card membership, \n  which includes perks like access to over 2,600 locations and guest privileges. The gym provides a clean, spacious environment with a variety of cardio and strength equipment. The PF App offers \n  guided workout routines, complete with visual tutorials. Members can also refer friends to earn free months, making it budget-friendly and social. Planet Fitness is ideal for beginners or those \n  looking for a supportive, affordable gym experience in a Judgement Free Zone", "image_url"=>"planetfitnessimage.png"}
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 3]]
+  ↳ app/views/gyms/show.html.erb:179
+  Rendered gyms/show.html.erb within layouts/application (Duration: 11.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 18.1ms | ActiveRecord: 2.2ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:23:33 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 14.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:23:35 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 15.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 19.6ms | ActiveRecord: 2.9ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+  [1m[36mGym Load (1.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "GoodLife Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:2:in `block in <main>'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Anytime Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:6:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Planet Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:13:in `block in <main>'
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "She's Fit"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:20:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Club 16"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:27:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "Gold's Gym"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_descriptions.rb:34:in `block in <main>'
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."name" = $1 LIMIT $2[0m  [["name", "GoodLife Fitness"], ["LIMIT", 1]]
+  ↳ config/initializers/update_gym_desctiptions.rb:2:in `block in <main>'
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:28:28 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (1.0ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 109.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 116.0ms | GC: 0.2ms)
+Completed 200 OK in 187ms (Views: 122.8ms | ActiveRecord: 7.1ms (9 queries, 1 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:28:39 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 19.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/1" for 127.0.0.1 at 2024-11-17 13:28:41 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGym Load (0.4ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>1, "name"=>"GoodLife Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.457053000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:21:10.760898000 UTC +00:00, "description"=>"GoodLife Fitness provides a comprehensive fitness experience with certified personal trainers and advanced equipment. Membership rates vary depending on location and membership type, typically starting around $50 to $70 per month. Trainers are continually certified and stay up-to-date with the latest in fitness, ensuring members receive top-tier guidance. Some clubs offer a Women's Only section, adding a private space for women.", "image_url"=>"goodlifefitnessimage.png"}
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 1]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 1]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  Rendered gyms/show.html.erb within layouts/application (Duration: 20.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 29.7ms | ActiveRecord: 2.1ms (11 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:29:39 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 17.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:29:42 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 19.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | GC: 0.0ms)
+Completed 200 OK in 53ms (Views: 26.8ms | ActiveRecord: 3.3ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:29:45 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 17.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/3" for 127.0.0.1 at 2024-11-17 13:29:48 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGym Load (0.2ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>3, "name"=>"Planet Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.469159000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:10:10.539757000 UTC +00:00, "description"=>"Planet Fitness is known for its affordability, with membership options starting as low as $10 per month for the basic membership and $22.99 per month for the Black Card membership, \n  which includes perks like access to over 2,600 locations and guest privileges. The gym provides a clean, spacious environment with a variety of cardio and strength equipment. The PF App offers \n  guided workout routines, complete with visual tutorials. Members can also refer friends to earn free months, making it budget-friendly and social. Planet Fitness is ideal for beginners or those \n  looking for a supportive, affordable gym experience in a Judgement Free Zone", "image_url"=>"planetfitnessimage.png"}
+  [1m[36mReview Average (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 3]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 3]]
+  ↳ app/views/gyms/show.html.erb:179
+  Rendered gyms/show.html.erb within layouts/application (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 16.6ms | ActiveRecord: 2.0ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-11-17 13:31:08 -0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 14.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/gyms/2" for 127.0.0.1 at 2024-11-17 13:31:10 -0800
+Processing by GymsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGym Load (0.3ms)[0m  [1m[34mSELECT "gyms".* FROM "gyms" WHERE "gyms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gyms_controller.rb:3:in `show'
+Gym: {"id"=>2, "name"=>"Anytime Fitness", "location"=>nil, "created_at"=>Tue, 08 Oct 2024 01:43:58.464160000 UTC +00:00, "updated_at"=>Sun, 17 Nov 2024 21:08:22.791200000 UTC +00:00, "description"=>"Anytime Fitness offers 24/7 access to over 5,000 locations worldwide, with membership rates starting around $40 to $50 per month. \n    Each member benefits from a personalized plan and the option of group or individual training, led by coaches who are invested in helping members reach their goals. \n    Free fitness consultations and access to Apple Fitness+ are included, adding value to the membership. Anytime Fitness is designed for convenience, with a welcoming atmosphere and flexible hours, \n    making it perfect for those with busy schedules. Its an ideal choice for anyone seeking round-the-clock access to a supportive fitness environment.", "image_url"=>"/assets/images/anytimefitnessimage.jpg"}
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:8:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."staff_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:9:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:10:in `show'
+  [1m[36mReview Average (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."clean_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:11:in `show'
+  [1m[36mReview Average (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."atmosphere_rating") FROM "reviews" WHERE "reviews"."gym_id" = $1[0m  [["gym_id", 2]]
+  ↳ app/controllers/gyms_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gyms/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."gym_id" = $1 ORDER BY "reviews"."created_at" DESC[0m  [["gym_id", 2]]
+  ↳ app/views/gyms/show.html.erb:179
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gyms/show.html.erb:181
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered gyms/show.html.erb within layouts/application (Duration: 11.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 17.8ms | ActiveRecord: 2.0ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/anytimefitnessimage.jpg"):
+  
