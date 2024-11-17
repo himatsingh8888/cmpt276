@@ -1,6 +1,7 @@
 class GymsController < ApplicationController
   def show
     @gym = Gym.find(params[:id])
+    Rails.logger.info "Gym: #{@gym.attributes}" # Log gym details to Render logs
     @reviews = @gym.reviews.order(created_at: :desc)
 
      # Calculate averages of each section rounded to one decimal place
