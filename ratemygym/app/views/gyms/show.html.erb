@@ -26,13 +26,7 @@
 
   <div class="wrapper">
     <header>
-      <% if @gym.image_url.present? %>
-        <%= image_tag @gym.image_url, alt: "Gym image", class: "full-width-image" %>
-      <% else %>
-        <div class="image-placeholder">
-          <p>No image available</p>
-        </div>
-      <% end %>
+      <%= image_tag(@gym.image_url.present? ? asset_path(@gym.image_url) : "no-image-available.png", alt: "Gym image", class: "full-width-image") %>
 
 
       <h1>Gym Reviews for <%= @gym.name %></h1>
