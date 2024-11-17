@@ -5,9 +5,7 @@ Gym.create(
   description: "GoodLife Fitness provides a comprehensive fitness experience with certified personal trainers and advanced equipment. Membership rates vary depending on location and membership type,
    typically starting around $50 to $70 per month. Trainers are continually certified and stay up-to-date with the latest in fitness, ensuring members receive top-tier guidance. Some clubs offer a Women's 
    Only section, adding a private space for women to focus on their workouts. With everything from cardio to strength training, GoodLife is ideal for those seeking a high-quality fitness environment.
-    This gym combines a supportive atmosphere with accountability, helping members reach their personal best.
-
-", 
+    This gym combines a supportive atmosphere with accountability, helping members reach their personal best.", 
   image_url: "goodlifefitnessimage.png"
 )
 
