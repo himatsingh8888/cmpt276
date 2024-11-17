@@ -26,7 +26,12 @@
 
   <div class="wrapper">
     <header>
-      <%= image_tag @gym.image_url, alt: "Gym image", class: "full-width-image" %>
+      <% if @gym.image_url.present? %>
+        <%= image_tag @gym.image_url, alt: "Gym image", class: "full-width-image" %>
+      <% else %>
+        <%= image_tag asset_path('default_image.png'), alt: "Default gym image", class: "full-width-image" %>
+      <% end %>
+
       <h1>Gym Reviews for <%= @gym.name %></h1>
     </header>
 
