@@ -101,11 +101,13 @@ body {
   background-color: #e0f7e9;
   color: #2e7d32;
   border: 1px solid #81c784;
+  top: 80px;
 }
 
 .alert {
   background-color: #fce4e4;
   color: #c62828;
   border: 1px solid #e57373;
+  top: 80px;
 }
 
